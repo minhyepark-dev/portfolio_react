@@ -1,0 +1,25 @@
+.community {
+    .inner {
+        article {
+            padding: 20px 10px;
+            border-bottom: 2px solid #0d211a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            h1 {
+                font-weight: normal;
+                font-size: 20px;
+            }
+            .right {
+                span {
+                    font-size: 16px;
+                }
+                em {
+                    margin-left: 50px;
+                    font-size: 16px;
+                    font-style: normal;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,96 @@
+header {
+    width: 100%;
+    .inner {
+        position: relative;
+        width: 1180px;
+        height: 100px;
+        margin: 0 auto;
+        h1 {
+            position: absolute;
+            left: 0;
+            bottom: 20px;
+            a {
+                color: #0d211a;
+                font: 40px/1 "Italiana";
+                text-transform: uppercase;
+                letter-spacing: 0.21em;
+            }
+        }
+        #gnb {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            li {
+                float: left;
+                a {
+                    display: inline-block;
+                    padding: 22px 15px;
+                    font-size: 11px;
+                    color: #a5abb0;
+                    text-transform: uppercase;
+                    letter-spacing: 0.39em;
+                    &:hover {
+                        color: #0d211a;
+                    }
+                }
+            }
+        }
+    }
+}
+main {
+    padding: 100px 0;
+    > .inner {
+        width: 1180px;
+        min-height: 500px;
+        margin: 0 auto;
+        > h1 {
+            margin-bottom: 50px;
+            font: normal 36px/1 "Italiana";
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #b46927;
+            padding: 10px;
+            text-align: center;
+        }
+    }
+}
+footer {
+    width: 100%;
+    border-top: 1px solid #ddd;
+    padding: 50px 0;
+    .inner {
+        width: 1180px;
+        margin: 0 auto;
+        text-align: center;
+        p {
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 1179px) {
+    header {
+        .inner {
+            width: 100%;
+            h1 {
+                left: 3vw;
+            }
+            #gnb {
+                display: none;
+            }
+        }
+    }
+    main {
+        padding: 80px 40px;
+        > .inner {
+            width: 100%;
+        }
+    }
+    footer {
+        .inner {
+            width: 100%;
+        }
+    }
+}
