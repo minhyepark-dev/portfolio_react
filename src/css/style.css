@@ -119,37 +119,80 @@ figure {
     font-size: 16px;
     font-style: normal; }
 
-.gallery .inner > section::after {
-  content: "";
-  display: block;
-  clear: both; }
-.gallery .inner > section article {
-  width: 25%;
-  height: 330px;
-  float: left;
-  padding: 10px; }
-  .gallery .inner > section article .inner {
-    width: 100%;
-    height: 100%;
-    padding: 30px 10px;
-    border-bottom: 2px solid #0d211a; }
-    .gallery .inner > section article .inner .pic {
-      width: 100%;
-      height: 200px;
-      margin-bottom: 20px;
+.gallery .inner {
+  position: relative; }
+  .gallery .inner .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    width: 10%;
+    transform: translateX(-50%); }
+  .gallery .inner .list {
+    position: relative;
+    transform: translateY(200px);
+    opacity: 0;
+    transition: 1s; }
+    .gallery .inner .list.on {
+      transform: translateY(0);
+      opacity: 1; }
+  .gallery .inner > section::after {
+    content: "";
+    display: block;
+    clear: both; }
+  .gallery .inner > section .search-box {
+    width: 50%;
+    height: 60px;
+    margin: 0 auto 50px;
+    border-bottom: 2px solid #b46927; }
+    .gallery .inner > section .search-box input {
+      background: transparent;
+      width: 90%;
+      height: 100%;
+      padding-left: 20px;
+      border: none;
+      outline-color: #b46927;
+      font: 16px/1 "Questrial"; }
+      .gallery .inner > section .search-box input::placeholder {
+        font: 14px/1 "Questrial";
+        letter-spacing: 2px;
+        color: #a5abb0; }
+    .gallery .inner > section .search-box button {
+      outline-color: #b46927;
+      width: 10%;
+      height: 100%;
+      border: none;
+      background: transparent;
       cursor: pointer; }
-      .gallery .inner > section article .inner .pic img {
+      .gallery .inner > section .search-box button .icon-search {
+        font-size: 16px;
+        color: #b46927; }
+  .gallery .inner > section article {
+    width: 33.3333%;
+    float: left;
+    padding: 10px; }
+    .gallery .inner > section article .inner {
+      width: 100%;
+      padding: 30px 10px;
+      border-bottom: 1px solid #b46927; }
+      .gallery .inner > section article .inner .pic {
         width: 100%;
-        height: 100%;
-        object-fit: cover; }
-    .gallery .inner > section article .inner h2 {
-      font-size: 12px;
-      line-height: 1.2;
-      color: #777;
-      margin-bottom: 10px; }
-    .gallery .inner > section article .inner p {
-      font-size: 10px;
-      color: #999; }
+        margin-bottom: 20px;
+        cursor: pointer; }
+        .gallery .inner > section article .inner .pic img {
+          width: 100%;
+          filter: grayscale(0.8);
+          transition: 0.5s; }
+        .gallery .inner > section article .inner .pic:hover img {
+          filter: grayscale(0); }
+      .gallery .inner > section article .inner h2 {
+        font-size: 12px;
+        line-height: 1.2;
+        color: #777;
+        margin-bottom: 10px; }
+      .gallery .inner > section article .inner p {
+        font-size: 10px;
+        color: #999; }
 .gallery .pop {
   width: 100%;
   height: 100vh;
