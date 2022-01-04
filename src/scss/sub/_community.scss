@@ -1,23 +1,62 @@
 .community {
     .inner {
         article {
-            padding: 20px 10px;
-            border-bottom: 2px solid #0d211a;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            h1 {
-                font-weight: normal;
-                font-size: 20px;
-            }
-            .right {
-                span {
-                    font-size: 16px;
+            &:nth-of-type(1) {
+                .question {
+                    border-top: 2px solid #0d211a;
                 }
-                em {
-                    margin-left: 50px;
-                    font-size: 16px;
-                    font-style: normal;
+            }
+            &:nth-last-of-type(1) {
+                .question {
+                    border-bottom: 2px solid #0d211a;
+                }
+            }
+            .question {
+                padding: 50px 30px;
+                cursor: pointer;
+                border-bottom: 1px solid #bbb;
+                &:nth-last-of-type(1) {
+                    border-bottom: 0;
+                }
+                &::after {
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+                h1 {
+                    font-weight: normal;
+                    font-size: 20px;
+                    float: left;
+                }
+                .right {
+                    float: right;
+                    margin-right: 20px;
+                    span {
+                        font-size: 16px;
+                    }
+                    em {
+                        margin-left: 50px;
+                        font-size: 16px;
+                        font-style: normal;
+                    }
+                    .icon-arrow {
+                        margin-left: 30px;
+                        font-size: 20px;
+                        vertical-align: middle;
+                        color: #b46927;
+                    }
+                }
+            }
+            .answer {
+                padding: 50px 30px;
+                background: #f6f2ef;
+                border-top: 2px solid #0d211a;
+                display: none;
+                p {
+                    font-size: 18px;
+                }
+                &.on {
+                    display: block;
                 }
             }
         }

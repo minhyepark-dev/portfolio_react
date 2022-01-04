@@ -13,11 +13,11 @@ ol {
   list-style: none; }
 
 body {
-  background: #e4dfdb;
   font: normal 16px/1 "Questrial"; }
 
 header {
-  width: 100%; }
+  width: 100%;
+  background: #f6f2ef; }
   header .inner {
     position: relative;
     width: 1180px;
@@ -34,7 +34,7 @@ header {
         letter-spacing: 0.21em; }
     header .inner #gnb {
       position: absolute;
-      bottom: 0;
+      bottom: 10px;
       right: 0; }
       header .inner #gnb li {
         float: left; }
@@ -49,19 +49,50 @@ header {
             color: #0d211a; }
 
 main {
-  padding: 100px 0; }
+  padding-bottom: 100px; }
+  main .sub-visual {
+    width: 100%;
+    height: 300px;
+    background: #f6f2ef;
+    margin-bottom: 50px; }
+    main .sub-visual .inner {
+      position: relative;
+      overflow: hidden;
+      width: 1180px;
+      height: 300px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      main .sub-visual .inner::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -60%;
+        left: 180px;
+        width: 300px;
+        height: 300px;
+        background: url(/public/img/circle.svg) no-repeat 0 0; }
+      main .sub-visual .inner::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -70%;
+        left: 0;
+        width: 400px;
+        height: 400px;
+        background: url(/public/img/circle2.svg) no-repeat 0 0;
+        opacity: 0.8; }
+      main .sub-visual .inner > h1 {
+        font: normal 42px/1 "Italiana";
+        letter-spacing: 20px;
+        text-transform: uppercase;
+        color: #b46927;
+        text-align: center; }
   main > .inner {
     width: 1180px;
     min-height: 500px;
     margin: 0 auto; }
-    main > .inner > h1 {
-      margin-bottom: 50px;
-      font: normal 36px/1 "Italiana";
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: #b46927;
-      padding: 10px;
-      text-align: center; }
 
 footer {
   width: 100%;
@@ -93,7 +124,8 @@ footer {
     width: 100%; } }
 figure {
   width: 100%;
-  height: 500px; }
+  height: 500px;
+  background: #fff; }
 
 #info {
   width: 100%;
@@ -103,29 +135,54 @@ figure {
     min-height: 300px;
     margin: 0 auto; }
 
-.community .inner article {
-  padding: 20px 10px;
-  border-bottom: 2px solid #0d211a;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; }
-  .community .inner article h1 {
+.community .inner article:nth-of-type(1) .question {
+  border-top: 2px solid #0d211a; }
+.community .inner article:nth-last-of-type(1) .question {
+  border-bottom: 2px solid #0d211a; }
+.community .inner article .question {
+  padding: 50px 30px;
+  cursor: pointer;
+  border-bottom: 1px solid #bbb; }
+  .community .inner article .question:nth-last-of-type(1) {
+    border-bottom: 0; }
+  .community .inner article .question::after {
+    content: "";
+    display: block;
+    clear: both; }
+  .community .inner article .question h1 {
     font-weight: normal;
-    font-size: 20px; }
-  .community .inner article .right span {
-    font-size: 16px; }
-  .community .inner article .right em {
-    margin-left: 50px;
-    font-size: 16px;
-    font-style: normal; }
+    font-size: 20px;
+    float: left; }
+  .community .inner article .question .right {
+    float: right;
+    margin-right: 20px; }
+    .community .inner article .question .right span {
+      font-size: 16px; }
+    .community .inner article .question .right em {
+      margin-left: 50px;
+      font-size: 16px;
+      font-style: normal; }
+    .community .inner article .question .right .icon-arrow {
+      margin-left: 30px;
+      font-size: 20px;
+      vertical-align: middle;
+      color: #b46927; }
+.community .inner article .answer {
+  padding: 50px 30px;
+  background: #f6f2ef;
+  border-top: 2px solid #0d211a;
+  display: none; }
+  .community .inner article .answer p {
+    font-size: 18px; }
+  .community .inner article .answer.on {
+    display: block; }
 
 .gallery .inner {
   position: relative; }
   .gallery .inner .loading {
     position: absolute;
-    top: 50%;
+    top: 250px;
     left: 50%;
-    z-index: 1;
     width: 10%;
     transform: translateX(-50%); }
   .gallery .inner .list {
@@ -174,7 +231,7 @@ figure {
     .gallery .inner > section article .inner {
       width: 100%;
       padding: 30px 10px;
-      border-bottom: 1px solid #b46927; }
+      border-bottom: 1px solid #0d211a; }
       .gallery .inner > section article .inner .pic {
         width: 100%;
         margin-bottom: 20px;

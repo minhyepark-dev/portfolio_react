@@ -3,9 +3,8 @@
         position: relative;
         .loading {
             position: absolute;
-            top: 50%;
+            top: 250px;
             left: 50%;
-            z-index: 1;
             width: 10%;
             transform: translateX(-50%);
         }
@@ -64,7 +63,7 @@
                 .inner {
                     width: 100%;
                     padding: 30px 10px;
-                    border-bottom: 1px solid #b46927;
+                    border-bottom: 1px solid #0d211a;
                     .pic {
                         width: 100%;
                         margin-bottom: 20px;
