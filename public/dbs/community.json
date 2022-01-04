@@ -3,22 +3,26 @@
         {
             "title": "Here comes subject text 1",
             "write": "Peter",
-            "date": "2022-01-01"
+            "date": "2022-01-01",
+            "answer" : "1Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique porro error tempora a, ea ab aliquid blanditiis veniam quam earum."
         },
         {
             "title": "Here comes subject text 2",
             "write": "Chris",
-            "date": "2022-01-02"
+            "date": "2022-01-02",
+            "answer" : "2Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique porro error tempora a, ea ab aliquid blanditiis veniam quam earum."
         },
         {
             "title": "Here comes subject text 3",
             "write": "Bill",
-            "date": "2022-01-03"
+            "date": "2022-01-03",
+            "answer" : "3Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique porro error tempora a, ea ab aliquid blanditiis veniam quam earum."
         },
         {
             "title": "Here comes subject text 4",
             "write": "Ben",
-            "date": "2022-01-04"
+            "date": "2022-01-04",
+            "answer" : "4Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique porro error tempora a, ea ab aliquid blanditiis veniam quam earum."
         }
     ]
 }
