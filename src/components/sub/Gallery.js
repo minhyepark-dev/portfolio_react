@@ -27,9 +27,12 @@ function Gallery() {
 
     return (
         <main className="gallery">
+            <div className="sub-visual">
+                <div className="inner">
+                    <h1>Gallery</h1>
+                </div>
+            </div>
             <div className="inner">
-                <h1>Gallery</h1>
-
                 <section>
                     <div className="search-box">
                         <input
@@ -49,7 +52,6 @@ function Gallery() {
                         />
                         <button
                             onClick={() => {
-                                console.log("click");
                                 if (enableClick) {
                                     const tags = input.current.value;
                                     if (tags === "") return;
@@ -63,7 +65,7 @@ function Gallery() {
                             <FontAwesomeIcon className="icon-search" icon={faSearch} />
                         </button>
                     </div>
-                    {loading ? <img className="loading" src={path + "/img/loading.png"} alt="loading" /> : ""}
+                    {loading ? <img className="loading" src={path + "/img/loading.png"} alt="loading" /> : null}
                     <div className="list" ref={list}>
                         <Masonry
                             className={"frame"}
@@ -102,6 +104,8 @@ function Gallery() {
         </main>
     );
     async function getFlickr(opt) {
+        setLoading(true);
+
         let url = "";
 
         const base = "https://www.flickr.com/services/rest/?";
@@ -128,7 +132,6 @@ function Gallery() {
                 setEnableClick(true);
             }, 1000);
         }, 1000);
-        setLoading(true);
     }
 
     function Pop() {

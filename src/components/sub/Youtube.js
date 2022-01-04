@@ -23,8 +23,12 @@ function Youtube() {
     }, []);
     return (
         <main className="youtube">
+            <div className="sub-visual">
+                <div className="inner">
+                    <h1>Youtube</h1>
+                </div>
+            </div>
             <div className="inner">
-                <h1>Youtube</h1>
                 <section className="frame">
                     {data.map((item, index) => {
                         let tit = item.snippet.title;
