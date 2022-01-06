@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Masonry from "react-masonry-component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-const path = process.env.PUBLIC_URL;
+const base = process.env.PUBLIC_URL;
 const body = document.querySelector("body");
 
 const masonryOptions = {
@@ -65,7 +65,7 @@ function Gallery() {
                             <FontAwesomeIcon className="icon-search" icon={faSearch} />
                         </button>
                     </div>
-                    {loading ? <img className="loading" src={path + "/img/loading.png"} alt="loading" /> : null}
+                    {loading ? <img className="loading" src={base + "/img/loading.png"} alt="loading" /> : null}
                     <div className="list" ref={list}>
                         <Masonry
                             className={"frame"}
