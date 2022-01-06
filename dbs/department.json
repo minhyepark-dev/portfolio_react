@@ -1,0 +1,67 @@
+{
+    "data" :[
+        {
+            "img" : "/img/member1.jpg",
+            "name": "Deric Miller",
+            "position": "Creatice Director",
+            "email" : "miller1234@gmail.com",
+            "introduce" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum debitis neque facilis eius impedit non mollitia. Architecto qui tempora, mollitia non corrupti cumque, nisi unde ipsam repudiandae minima adipisci totam reiciendis! Laudantium aliquid repellendus iure!"
+        },
+        {
+            "img" : "/img/member2.jpg",
+            "name": "Chris kruse",
+            "position": "Technical Director",
+            "email" : "Chris-k@gmail.com",
+            "introduce" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt tempora consequuntur ullam alias veritatis beatae, eaque adipisci corrupti expedita similique molestias omnis incidunt rerum, necessitatibus repellendus quasi explicabo, illo laboriosam!"
+        },
+        {
+            "img" : "/img/member3.jpg",
+            "name": "Devin Richards",
+            "position": "Project Managger",
+            "email" : "Devin5678@gmail.com",
+            "introduce" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor et molestias architecto ab rem totam mollitia consectetur eligendi? Accusantium quis, cupiditate numquam provident mollitia ducimus?"
+        },
+        {
+            "img" : "/img/member4.jpg",
+            "name": "Matt Caleant",
+            "position": "Senior Engineer",
+            "email" : "Mattgt@gmail.com",
+            "introduce" : "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vitae aspernatur provident voluptatibus sit iusto cum enim repellat, praesentium magnam!"
+        },
+        {
+            "img" : "/img/member5.jpg",
+            "name": "John Gates",
+            "position": "Lead Creative",
+            "email" : "Gates@gmail.com",
+            "introduce" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non obcaecati, odio aliquid illum eveniet, libero fugiat, animi ratione voluptates laborum nostrum nulla eius!"
+        },
+        {
+            "img" : "/img/member6.jpg",
+            "name": "Amber Reed",
+            "position": "Visual Interaction Designer",
+            "email" : "Abreed@gmail.com",
+            "introduce" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit rem facere, tenetur, modi quo dicta esse reiciendis accusantium, dignissimos quod quas accusamus! Eaque eveniet eos magnam nobis quaerat fugiat earum tenetur, cupiditate nam?"
+        },
+        {
+            "img" : "/img/member7.jpg",
+            "name": "Chula Carlson",
+            "position": "Accounting Assistant",
+            "email" : "cclason@gmail.com",
+            "introduce" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non hic aperiam, corporis, voluptates quos tenetur culpa iusto distinctio veritatis maxime magni reiciendis sapiente laborum molestiae reprehenderit eos commodi, placeat amet? Quos eos iste vitae sit doloribus magni quas nostrum pariatur!"
+        },
+        {
+            "img" : "/img/member8.jpg",
+            "name": "Jamin Hegeman",
+            "position": "General Manager",
+            "email" : "Hegemanjj@gmail.com",
+            "introduce" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aliquid dicta nisi exercitationem id repudiandae natus! Nulla iste mollitia perferendis?"
+        },
+        {
+            "img" : "/img/member9.jpg",
+            "name": "Nelly Wollenberg",
+            "position": "Marketing Director",
+            "email" : "nwnelly4@gmail.com",
+            "introduce" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique porro error tempora a, ea ab aliquid blanditiis veniam quam earum."
+        }
+    ]
+}
