@@ -8,6 +8,8 @@ import Footer from "./components/common/Footer";
 // import main component
 import Visual from "./components/main/Visual";
 import Info from "./components/main/Info";
+import Notice from "./components/main/Notice";
+import Collection from "./components/main/Collection";
 
 // import sub component
 import Department from "./components/sub/Department";
@@ -24,6 +26,8 @@ function App() {
             <Route exact path="/">
                 <Visual />
                 <Info />
+                <Notice />
+                <Collection />
             </Route>
             <Route exact path="/department" component={Department}></Route>
             <Route exact path="/community" component={Community}></Route>
