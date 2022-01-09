@@ -1,0 +1,32 @@
+.collection {
+    background: #f6f2ef;
+    padding-top: 100px;
+    .inner {
+        .img-wrap {
+            display: flex;
+            justify-content: center;
+            align-content: space-between;
+            height: 600px;
+            .img {
+                width: 33.3333%;
+                height: 100%;
+                padding: 20px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                &:nth-of-type(2) {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-content: space-between;
+                    img {
+                        width: 49%;
+                        height: 49%;
+                    }
+                }
+            }
+        }
+    }
+}
