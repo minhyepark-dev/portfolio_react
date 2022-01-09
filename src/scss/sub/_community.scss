@@ -1,16 +1,53 @@
 .community {
     .inner {
+        .news {
+            display: flex;
+            justify-content: center;
+            align-content: space-between;
+            margin-bottom: 50px;
+            .box {
+                width: 33.3333%;
+                height: 160px;
+                margin-right: 10px;
+                border: 1px solid #a5abb0;
+                padding: 0 30px;
+                // text-align: center;
+                cursor: pointer;
+                transition: 0.5s;
+                &:hover {
+                    border: 1px solid $baseColor;
+                    h2 {
+                        transform: translateY(-10px);
+                        color: $baseColor;
+                        font-weight: bold;
+                    }
+                }
+                &:nth-of-type(3) {
+                    margin-right: 0;
+                }
+                &.on {
+                    border: 1px solid $baseColor;
+                    h2 {
+                        color: $baseColor;
+                        font-weight: bold;
+                    }
+                }
+                h2 {
+                    color: #a5abb0;
+                    font-size: 60px;
+                    font-weight: normal;
+                    letter-spacing: 5px;
+                    text-transform: uppercase;
+                    margin-top: 50px;
+                    transition: transform 0.5s;
+                }
+            }
+        }
+        .list {
+            border-top: 2px solid $baseColor;
+            border-bottom: 2px solid $baseColor;
+        }
         article {
-            &:nth-of-type(1) {
-                .question {
-                    border-top: 2px solid #0d211a;
-                }
-            }
-            &:nth-last-of-type(1) {
-                .question {
-                    border-bottom: 2px solid #0d211a;
-                }
-            }
             .question {
                 padding: 50px 30px;
                 cursor: pointer;
@@ -43,14 +80,14 @@
                         margin-left: 30px;
                         font-size: 20px;
                         vertical-align: middle;
-                        color: #b46927;
+                        color: $pointColor;
                     }
                 }
             }
             .answer {
                 padding: 50px 30px;
                 background: #f6f2ef;
-                border-top: 2px solid #0d211a;
+                border-top: 2px solid $baseColor;
                 display: none;
                 p {
                     font-size: 18px;
@@ -59,6 +96,99 @@
                 &.on {
                     display: block;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $laptop) {
+    .community .inner {
+        .news {
+            padding: 0 20px;
+            .box {
+                h2 {
+                    font-size: 3rem;
+                }
+            }
+        }
+        .list {
+            padding: 0 20px;
+        }
+        article {
+            .question {
+                width: 100%;
+                h1 {
+                    width: 60%;
+                    font-size: 16px;
+                }
+                .right {
+                    margin-right: 0;
+                    span {
+                        font-size: 14px;
+                    }
+                    em {
+                        margin-left: 30px;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .answer p {
+                font-size: 14px;
+            }
+        }
+    }
+}
+@media screen and (max-width: $tablet) {
+    .community .inner {
+        .news {
+            .box {
+                padding: 0;
+                text-align: center;
+                height: 100px;
+                h2 {
+                    font-size: 1.8rem;
+                    margin-top: 35px;
+                }
+            }
+        }
+        article {
+            .question {
+                h1 {
+                    width: 50%;
+                }
+                .right em {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: $mobile) {
+    .community .inner {
+        .news {
+            .box {
+                height: 80px;
+                h2 {
+                    font-size: 1rem;
+                    margin-top: 30px;
+                }
+            }
+        }
+        article {
+            .question {
+                padding: 30px 10px;
+                h1 {
+                    float: none;
+                    margin-bottom: 30px;
+                    width: 100%;
+                }
+                .right {
+                    float: none;
+                    text-align: right;
+                }
+            }
+            .answer {
+                padding: 30px 10px;
             }
         }
     }
