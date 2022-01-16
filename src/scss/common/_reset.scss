@@ -14,6 +14,46 @@ ol {
 body {
     font: normal 16px/1 "Questrial";
 }
+.h {
+    position: absolute;
+    top: -99999px;
+    opacity: 0;
+}
+label,
+input {
+    vertical-align: middle;
+}
+fieldset {
+    border: none;
+}
+input[type="checkbox"] {
+    display: none;
+    & + label {
+        display: inline-block;
+        padding-left: 25px;
+        background: url(/public/img/box_check_empty.png) no-repeat left/16px;
+        background-position: 0 0;
+        line-height: 16px;
+        cursor: pointer;
+    }
+    &:checked + label {
+        background-image: url(/public/img/box_check_checked.png);
+    }
+}
+input[type="radio"] {
+    display: none;
+    & + label {
+        display: inline-block;
+        padding-left: 25px;
+        background: url(/public/img/box_radio_empty.png) no-repeat left/16px;
+        background-position: 0 0;
+        line-height: 16px;
+        cursor: pointer;
+    }
+    &:checked + label {
+        background-image: url(/public/img/box_radio_checked.png);
+    }
+}
 
 $laptop: 1179px;
 $tablet: 769px;
