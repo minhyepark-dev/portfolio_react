@@ -80,3 +80,62 @@
         }
     }
 }
+
+@media screen and (max-width: $laptop) {
+    .notice {
+        .inner {
+            .slider {
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (max-width: $tablet) {
+    .notice {
+        padding-bottom: 0;
+        .inner {
+            padding-top: 70px;
+            h2 {
+                font-size: 26px;
+                margin-bottom: 70px;
+            }
+            .slider {
+                ul {
+                    width: 400%;
+                    li {
+                        width: 100%;
+                        .slider-content {
+                            width: 25%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: $mobile) {
+    .notice {
+        .inner {
+            padding-top: 50px;
+            min-height: auto;
+            h2 {
+                font-size: 22px;
+                margin-bottom: 50px;
+            }
+            .slider {
+                ul {
+                    li {
+                        .slider-content {
+                            h3 {
+                                font-size: 18px;
+                            }
+                            p {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

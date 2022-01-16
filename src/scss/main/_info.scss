@@ -79,3 +79,99 @@
         }
     }
 }
+
+@media screen and (max-width: $laptop) {
+    #info {
+        .inner {
+            width: 100%;
+            .text {
+                width: 80%;
+                p {
+                    &:first-of-type {
+                        font-size: 22px;
+                    }
+                    &:nth-of-type(2) {
+                        line-height: 2;
+                    }
+                }
+            }
+            .img-wrap {
+                width: 100%;
+                .img-card {
+                    width: 100%;
+                    figcaption {
+                        padding: 20px 30px;
+                        .img-number {
+                            font-size: 30px;
+                        }
+                        .img-title {
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: $tablet) {
+    #info {
+        .inner {
+            .text {
+                width: 90%;
+            }
+            .img-wrap {
+                .img-card {
+                    padding: 10px;
+                    width: 33.3333%;
+                    figcaption {
+                        .img-number {
+                            font-size: 26px;
+                        }
+                        .img-title {
+                            font-size: 20px;
+                        }
+                    }
+                    .img {
+                        height: 225px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: $mobile) {
+    #info {
+        .inner {
+            .text {
+                width: 95%;
+                p {
+                    &:first-of-type {
+                        font-size: 16px;
+                    }
+                    &:nth-of-type(2) {
+                        font-size: 14px;
+                        line-height: 1.8;
+                    }
+                }
+            }
+            .img-wrap {
+                flex-wrap: wrap;
+                .img-card {
+                    width: 100%;
+                    margin-bottom: 50px;
+                    figcaption {
+                        .img-number {
+                            font-size: 22px;
+                        }
+                        .img-title {
+                            font-size: 18px;
+                        }
+                    }
+                    .img {
+                        height: 225px;
+                    }
+                }
+            }
+        }
+    }
+}

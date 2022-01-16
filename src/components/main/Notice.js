@@ -30,7 +30,7 @@ function Notice() {
                                         className="icon-arrow"
                                         icon={faArrowRight}
                                         style={{
-                                            "margin-left": 10,
+                                            marginLeft: 10,
                                         }}
                                     />
                                 </Link>
@@ -47,7 +47,7 @@ function Notice() {
                                         className="icon-arrow"
                                         icon={faArrowRight}
                                         style={{
-                                            "margin-left": 10,
+                                            marginLeft: 10,
                                         }}
                                     />
                                 </Link>
@@ -66,7 +66,7 @@ function Notice() {
                                         className="icon-arrow"
                                         icon={faArrowRight}
                                         style={{
-                                            "margin-left": 10,
+                                            marginLeft: 10,
                                         }}
                                     />
                                 </Link>
@@ -83,7 +83,7 @@ function Notice() {
                                         className="icon-arrow"
                                         icon={faArrowRight}
                                         style={{
-                                            "margin-left": 10,
+                                            marginLeft: 10,
                                         }}
                                     />
                                 </Link>
