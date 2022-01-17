@@ -49,7 +49,7 @@ function Location() {
         map.setCenter(mapInfo[index].latlng);
 
         const mapTypeControl = new kakao.maps.MapTypeControl();
-        // map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+        map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
         map.setZoomable(true);
         map.setDraggable(true);
 
@@ -60,6 +60,7 @@ function Location() {
         window.addEventListener("resize", mapSet);
         return () => {
             window.removeEventListener("resize", mapSet);
+            container.current.innerHTML = "";
         };
     }, [index]);
     return (
