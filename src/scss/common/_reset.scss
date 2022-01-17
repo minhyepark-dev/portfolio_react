@@ -13,6 +13,9 @@ ol {
 }
 body {
     font: normal 16px/1 "Questrial";
+    &.on {
+        overflow: hidden;
+    }
 }
 .h {
     position: absolute;
