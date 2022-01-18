@@ -11,66 +11,71 @@
             text-transform: uppercase;
             letter-spacing: 3px;
         }
-        .slider {
-            width: 1180px;
-            height: 300px;
+        .slider-wrap {
+            width: 100%;
             position: relative;
-            overflow: hidden;
             .slider-btn {
                 display: flex;
                 justify-content: right;
                 align-content: space-around;
+                margin-right: 20px;
                 > div {
                     cursor: pointer;
                     padding: 10px;
                 }
             }
-            ul {
-                width: 200%;
-                height: 100%;
-                &::after {
-                    content: "";
-                    display: block;
-                    clear: both;
-                }
-                li {
-                    width: 50%;
-                    height: 100%;
-                    float: left;
-                    .slider-content {
-                        width: 50%;
+            .slider {
+                width: 1180px;
+                position: relative;
+                overflow: hidden;
+                ul {
+                    width: 400%;
+                    &::after {
+                        content: "";
+                        display: block;
+                        clear: both;
+                    }
+                    li {
+                        width: 25%;
+                        height: 100%;
                         float: left;
-                        padding: 30px;
-                        text-align: center;
-                        h3 {
-                            font-size: 20px;
-                            margin-bottom: 30px;
-                            letter-spacing: 2px;
-                        }
-                        p {
-                            font-size: 16px;
-                            line-height: 1.5;
-                            margin-bottom: 50px;
-                        }
-                        a {
-                            color: #fff;
-                            position: relative;
-                            text-transform: uppercase;
-                            letter-spacing: 2px;
-                            &::after {
-                                transition: 0.7s;
-                                width: 0%;
-                                content: "";
-                                position: absolute;
-                                left: 0;
-                                bottom: -10px;
-                                display: block;
-                                height: 1px;
-                                background: #fff;
+                        display: flex;
+                        justify-content: center;
+                        align-content: center;
+                        .slider-content {
+                            width: 80%;
+                            float: left;
+                            padding: 30px;
+                            h3 {
+                                font-size: 20px;
+                                margin-bottom: 30px;
+                                letter-spacing: 2px;
                             }
-                            &:hover {
+                            p {
+                                font-size: 16px;
+                                line-height: 1.5;
+                                margin-bottom: 50px;
+                            }
+                            a {
+                                color: #fff;
+                                position: relative;
+                                text-transform: uppercase;
+                                letter-spacing: 2px;
                                 &::after {
-                                    width: 100%;
+                                    transition: 0.7s;
+                                    width: 0%;
+                                    content: "";
+                                    position: absolute;
+                                    left: 0;
+                                    bottom: -10px;
+                                    display: block;
+                                    height: 1px;
+                                    background: #fff;
+                                }
+                                &:hover {
+                                    &::after {
+                                        width: 100%;
+                                    }
                                 }
                             }
                         }
@@ -84,7 +89,7 @@
 @media screen and (max-width: $laptop) {
     .notice {
         .inner {
-            .slider {
+            .slider-wrap .slider {
                 width: 100%;
             }
         }
@@ -98,17 +103,6 @@
             h2 {
                 font-size: 26px;
                 margin-bottom: 70px;
-            }
-            .slider {
-                ul {
-                    width: 400%;
-                    li {
-                        width: 100%;
-                        .slider-content {
-                            width: 25%;
-                        }
-                    }
-                }
             }
         }
     }

@@ -517,62 +517,66 @@ footer {
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 3px; }
-    .notice .inner .slider {
-      width: 1180px;
-      height: 300px;
-      position: relative;
-      overflow: hidden; }
-      .notice .inner .slider .slider-btn {
+    .notice .inner .slider-wrap {
+      width: 100%;
+      position: relative; }
+      .notice .inner .slider-wrap .slider-btn {
         display: flex;
         justify-content: right;
-        align-content: space-around; }
-        .notice .inner .slider .slider-btn > div {
+        align-content: space-around;
+        margin-right: 20px; }
+        .notice .inner .slider-wrap .slider-btn > div {
           cursor: pointer;
           padding: 10px; }
-      .notice .inner .slider ul {
-        width: 200%;
-        height: 100%; }
-        .notice .inner .slider ul::after {
-          content: "";
-          display: block;
-          clear: both; }
-        .notice .inner .slider ul li {
-          width: 50%;
-          height: 100%;
-          float: left; }
-          .notice .inner .slider ul li .slider-content {
-            width: 50%;
+      .notice .inner .slider-wrap .slider {
+        width: 1180px;
+        position: relative;
+        overflow: hidden; }
+        .notice .inner .slider-wrap .slider ul {
+          width: 400%; }
+          .notice .inner .slider-wrap .slider ul::after {
+            content: "";
+            display: block;
+            clear: both; }
+          .notice .inner .slider-wrap .slider ul li {
+            width: 25%;
+            height: 100%;
             float: left;
-            padding: 30px;
-            text-align: center; }
-            .notice .inner .slider ul li .slider-content h3 {
-              font-size: 20px;
-              margin-bottom: 30px;
-              letter-spacing: 2px; }
-            .notice .inner .slider ul li .slider-content p {
-              font-size: 16px;
-              line-height: 1.5;
-              margin-bottom: 50px; }
-            .notice .inner .slider ul li .slider-content a {
-              color: #fff;
-              position: relative;
-              text-transform: uppercase;
-              letter-spacing: 2px; }
-              .notice .inner .slider ul li .slider-content a::after {
-                transition: 0.7s;
-                width: 0%;
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: -10px;
-                display: block;
-                height: 1px;
-                background: #fff; }
-              .notice .inner .slider ul li .slider-content a:hover::after {
-                width: 100%; }
+            display: flex;
+            justify-content: center;
+            align-content: center; }
+            .notice .inner .slider-wrap .slider ul li .slider-content {
+              width: 80%;
+              float: left;
+              padding: 30px; }
+              .notice .inner .slider-wrap .slider ul li .slider-content h3 {
+                font-size: 20px;
+                margin-bottom: 30px;
+                letter-spacing: 2px; }
+              .notice .inner .slider-wrap .slider ul li .slider-content p {
+                font-size: 16px;
+                line-height: 1.5;
+                margin-bottom: 50px; }
+              .notice .inner .slider-wrap .slider ul li .slider-content a {
+                color: #fff;
+                position: relative;
+                text-transform: uppercase;
+                letter-spacing: 2px; }
+                .notice .inner .slider-wrap .slider ul li .slider-content a::after {
+                  transition: 0.7s;
+                  width: 0%;
+                  content: "";
+                  position: absolute;
+                  left: 0;
+                  bottom: -10px;
+                  display: block;
+                  height: 1px;
+                  background: #fff; }
+                .notice .inner .slider-wrap .slider ul li .slider-content a:hover::after {
+                  width: 100%; }
 
 @media screen and (max-width: 1179px) {
-  .notice .inner .slider {
+  .notice .inner .slider-wrap .slider {
     width: 100%; } }
 @media screen and (max-width: 769px) {
   .notice {
@@ -581,13 +585,7 @@ footer {
       padding-top: 70px; }
       .notice .inner h2 {
         font-size: 26px;
-        margin-bottom: 70px; }
-      .notice .inner .slider ul {
-        width: 400%; }
-        .notice .inner .slider ul li {
-          width: 100%; }
-          .notice .inner .slider ul li .slider-content {
-            width: 25%; } }
+        margin-bottom: 70px; } }
 @media screen and (max-width: 460px) {
   .notice .inner {
     padding-top: 50px;
