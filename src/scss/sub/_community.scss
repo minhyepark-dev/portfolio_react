@@ -43,58 +43,64 @@
                 }
             }
         }
-        .list {
+        section {
             border-top: 2px solid $baseColor;
             border-bottom: 2px solid $baseColor;
-        }
-        article {
-            .question {
-                padding: 50px 30px;
-                cursor: pointer;
-                border-bottom: 1px solid #bbb;
-                &:nth-last-of-type(1) {
-                    border-bottom: 0;
-                }
-                &::after {
-                    content: "";
-                    display: block;
-                    clear: both;
-                }
-                h1 {
-                    font-weight: normal;
-                    font-size: 20px;
-                    float: left;
-                }
-                .right {
-                    float: right;
-                    margin-right: 20px;
-                    span {
-                        font-size: 16px;
-                    }
-                    em {
-                        margin-left: 50px;
-                        font-size: 16px;
-                        font-style: normal;
-                    }
-                    .icon-arrow {
-                        margin-left: 30px;
-                        font-size: 20px;
-                        vertical-align: middle;
-                        color: $pointColor;
-                    }
-                }
-            }
-            .answer {
-                padding: 50px 30px;
-                background: #f6f2ef;
-                border-top: 2px solid $baseColor;
+            .list {
                 display: none;
-                p {
-                    font-size: 18px;
-                    line-height: 1.5;
-                }
                 &.on {
                     display: block;
+                }
+                article {
+                    .question {
+                        padding: 50px 30px;
+                        cursor: pointer;
+                        border-bottom: 1px solid #bbb;
+                        &:nth-last-of-type(1) {
+                            border-bottom: 0;
+                        }
+                        &::after {
+                            content: "";
+                            display: block;
+                            clear: both;
+                        }
+                        h1 {
+                            font-weight: normal;
+                            font-size: 20px;
+                            float: left;
+                        }
+                        .right {
+                            float: right;
+                            margin-right: 20px;
+                            span {
+                                font-size: 16px;
+                            }
+                            em {
+                                margin-left: 50px;
+                                font-size: 16px;
+                                font-style: normal;
+                            }
+                            .icon-arrow {
+                                margin-left: 30px;
+                                font-size: 20px;
+                                vertical-align: middle;
+                                color: $pointColor;
+                            }
+                        }
+                    }
+                    .answer {
+                        padding: 50px 30px;
+                        background: #f6f2ef;
+                        display: none;
+                        p {
+                            font-size: 18px;
+                            line-height: 1.5;
+                        }
+                        &.on {
+                            display: block;
+                            border-bottom: 2px solid $baseColor;
+                        }
+                    }
                 }
             }
         }
@@ -111,29 +117,31 @@
                 }
             }
         }
-        .list {
-            padding: 0 20px;
-        }
-        article {
-            .question {
-                width: 100%;
-                h1 {
-                    width: 60%;
-                    font-size: 16px;
-                }
-                .right {
-                    margin-right: 0;
-                    span {
+        section {
+            .list {
+                padding: 0 20px;
+                article {
+                    .question {
+                        width: 100%;
+                        h1 {
+                            width: 60%;
+                            font-size: 16px;
+                        }
+                        .right {
+                            margin-right: 0;
+                            span {
+                                font-size: 14px;
+                            }
+                            em {
+                                margin-left: 30px;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    .answer p {
                         font-size: 14px;
                     }
-                    em {
-                        margin-left: 30px;
-                        font-size: 14px;
-                    }
                 }
-            }
-            .answer p {
-                font-size: 14px;
             }
         }
     }
@@ -151,13 +159,15 @@
                 }
             }
         }
-        article {
-            .question {
-                h1 {
-                    width: 50%;
-                }
-                .right em {
-                    display: none;
+        section .list {
+            article {
+                .question {
+                    h1 {
+                        width: 50%;
+                    }
+                    .right em {
+                        display: none;
+                    }
                 }
             }
         }
@@ -174,21 +184,23 @@
                 }
             }
         }
-        article {
-            .question {
-                padding: 30px 10px;
-                h1 {
-                    float: none;
-                    margin-bottom: 30px;
-                    width: 100%;
+        section .list {
+            article {
+                .question {
+                    padding: 30px 10px;
+                    h1 {
+                        float: none;
+                        margin-bottom: 30px;
+                        width: 100%;
+                    }
+                    .right {
+                        float: none;
+                        text-align: right;
+                    }
                 }
-                .right {
-                    float: none;
-                    text-align: right;
+                .answer {
+                    padding: 30px 10px;
                 }
-            }
-            .answer {
-                padding: 30px 10px;
             }
         }
     }

@@ -879,69 +879,73 @@ footer {
       text-transform: uppercase;
       margin-top: 50px;
       transition: transform 0.5s; }
-.community .inner .list {
+.community .inner section {
   border-top: 2px solid #0d211a;
   border-bottom: 2px solid #0d211a; }
-.community .inner article .question {
-  padding: 50px 30px;
-  cursor: pointer;
-  border-bottom: 1px solid #bbb; }
-  .community .inner article .question:nth-last-of-type(1) {
-    border-bottom: 0; }
-  .community .inner article .question::after {
-    content: "";
-    display: block;
-    clear: both; }
-  .community .inner article .question h1 {
-    font-weight: normal;
-    font-size: 20px;
-    float: left; }
-  .community .inner article .question .right {
-    float: right;
-    margin-right: 20px; }
-    .community .inner article .question .right span {
-      font-size: 16px; }
-    .community .inner article .question .right em {
-      margin-left: 50px;
-      font-size: 16px;
-      font-style: normal; }
-    .community .inner article .question .right .icon-arrow {
-      margin-left: 30px;
-      font-size: 20px;
-      vertical-align: middle;
-      color: #b46927; }
-.community .inner article .answer {
-  padding: 50px 30px;
-  background: #f6f2ef;
-  border-top: 2px solid #0d211a;
-  display: none; }
-  .community .inner article .answer p {
-    font-size: 18px;
-    line-height: 1.5; }
-  .community .inner article .answer.on {
-    display: block; }
+  .community .inner section .list {
+    display: none; }
+    .community .inner section .list.on {
+      display: block; }
+    .community .inner section .list article .question {
+      padding: 50px 30px;
+      cursor: pointer;
+      border-bottom: 1px solid #bbb; }
+      .community .inner section .list article .question:nth-last-of-type(1) {
+        border-bottom: 0; }
+      .community .inner section .list article .question::after {
+        content: "";
+        display: block;
+        clear: both; }
+      .community .inner section .list article .question h1 {
+        font-weight: normal;
+        font-size: 20px;
+        float: left; }
+      .community .inner section .list article .question .right {
+        float: right;
+        margin-right: 20px; }
+        .community .inner section .list article .question .right span {
+          font-size: 16px; }
+        .community .inner section .list article .question .right em {
+          margin-left: 50px;
+          font-size: 16px;
+          font-style: normal; }
+        .community .inner section .list article .question .right .icon-arrow {
+          margin-left: 30px;
+          font-size: 20px;
+          vertical-align: middle;
+          color: #b46927; }
+    .community .inner section .list article .answer {
+      padding: 50px 30px;
+      background: #f6f2ef;
+      display: none; }
+      .community .inner section .list article .answer p {
+        font-size: 18px;
+        line-height: 1.5; }
+      .community .inner section .list article .answer.on {
+        display: block;
+        border-bottom: 2px solid #0d211a; }
 
 @media screen and (max-width: 1179px) {
   .community .inner .news {
     padding: 0 20px; }
     .community .inner .news .box h2 {
       font-size: 3rem; }
-  .community .inner .list {
+  .community .inner section .list {
     padding: 0 20px; }
-  .community .inner article .question {
-    width: 100%; }
-    .community .inner article .question h1 {
-      width: 60%;
-      font-size: 16px; }
-    .community .inner article .question .right {
-      margin-right: 0; }
-      .community .inner article .question .right span {
-        font-size: 14px; }
-      .community .inner article .question .right em {
-        margin-left: 30px;
-        font-size: 14px; }
-  .community .inner article .answer p {
-    font-size: 14px; } }
+    .community .inner section .list article .question {
+      width: 100%; }
+      .community .inner section .list article .question h1 {
+        width: 60%;
+        font-size: 16px; }
+      .community .inner section .list article .question .right {
+        margin-right: 0; }
+        .community .inner section .list article .question .right span {
+          font-size: 14px; }
+        .community .inner section .list article .question .right em {
+          margin-left: 30px;
+          font-size: 14px; }
+    .community .inner section .list article .answer p {
+      font-size: 14px; } }
 @media screen and (max-width: 769px) {
   .community .inner .news .box {
     padding: 0;
@@ -950,9 +954,9 @@ footer {
     .community .inner .news .box h2 {
       font-size: 1.8rem;
       margin-top: 35px; }
-  .community .inner article .question h1 {
+  .community .inner section .list article .question h1 {
     width: 50%; }
-  .community .inner article .question .right em {
+  .community .inner section .list article .question .right em {
     display: none; } }
 @media screen and (max-width: 460px) {
   .community .inner .news .box {
@@ -960,16 +964,16 @@ footer {
     .community .inner .news .box h2 {
       font-size: 1rem;
       margin-top: 30px; }
-  .community .inner article .question {
+  .community .inner section .list article .question {
     padding: 30px 10px; }
-    .community .inner article .question h1 {
+    .community .inner section .list article .question h1 {
       float: none;
       margin-bottom: 30px;
       width: 100%; }
-    .community .inner article .question .right {
+    .community .inner section .list article .question .right {
       float: none;
       text-align: right; }
-  .community .inner article .answer {
+  .community .inner section .list article .answer {
     padding: 30px 10px; } }
 .gallery .inner {
   position: relative; }
