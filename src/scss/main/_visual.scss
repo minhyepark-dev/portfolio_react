@@ -6,6 +6,7 @@
         width: 1180px;
         margin: 0 auto;
         padding: 70px 0 0;
+        perspective: 1100px;
         p {
             position: absolute;
             width: 250px;
@@ -35,18 +36,19 @@
         }
         h2 {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 40%;
+            left: 10%;
             z-index: 1;
-            // color: #816246;
             color: $pointColor;
-            // color: $baseColor;
-            // color: #086068;
             font: 130px/1 "Italiana";
             text-transform: uppercase;
             white-space: nowrap;
             letter-spacing: 3px;
+            cursor: default;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            transition: ease-out 0.2s;
+            transform-origin: center;
         }
         img {
             display: block;
