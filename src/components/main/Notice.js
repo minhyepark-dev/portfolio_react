@@ -64,7 +64,7 @@ function Notice() {
                                         ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, nulla culpa. Excepturi eius, quibusdam
                                         delectus quod accusantium voluptates! Aliquid, rem.
                                     </p>
-                                    <Link exact to="/community">
+                                    <Link exact="true" to="/community">
                                         Read More
                                         <FontAwesomeIcon
                                             className="icon-arrow"
@@ -86,7 +86,7 @@ function Notice() {
                                         ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, nulla culpa. Excepturi eius, quibusdam
                                         delectus quod accusantium voluptates! Aliquid, rem.
                                     </p>
-                                    <Link to="/">
+                                    <Link exact="true" to="/community">
                                         Read More
                                         <FontAwesomeIcon
                                             className="icon-arrow"
@@ -108,7 +108,7 @@ function Notice() {
                                         ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, nulla culpa. Excepturi eius, quibusdam
                                         delectus quod accusantium voluptates! Aliquid, rem.
                                     </p>
-                                    <Link to="/">
+                                    <Link exact="true" to="/community">
                                         Read More
                                         <FontAwesomeIcon
                                             className="icon-arrow"
