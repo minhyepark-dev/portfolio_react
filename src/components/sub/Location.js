@@ -41,15 +41,13 @@ function Location() {
         const map = new kakao.maps.Map(container.current, options);
         setMap(map);
         new kakao.maps.Marker({
-            map: map, // 마커를 표시할 지도
-            position: mapInfo[index].latlng, // 마커를 표시할 위치
-            title: mapInfo[index].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+            map: map,
+            position: mapInfo[index].latlng,
+            title: mapInfo[index].title,
             image: new kakao.maps.MarkerImage(mapInfo[index].imgSrc, mapInfo[index].imgSize, mapInfo[index].imgPos), // 마커 이미지
         });
         map.setCenter(mapInfo[index].latlng);
 
-        const mapTypeControl = new kakao.maps.MapTypeControl();
-        map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
         map.setZoomable(true);
         map.setDraggable(true);
 
@@ -109,29 +107,6 @@ function Location() {
                     </div>
                 </div>
                 <div className="map-wrap">
-                    <ul className="traffic">
-                        {toggle ? (
-                            <li
-                                onClick={() => {
-                                    map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-                                    setToggle(!toggle);
-                                }}
-                            >
-                                <FontAwesomeIcon className="traffic-icon" icon={faTrafficLight} />
-                                Off the traffic
-                            </li>
-                        ) : (
-                            <li
-                                onClick={() => {
-                                    map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-                                    setToggle(!toggle);
-                                }}
-                            >
-                                <FontAwesomeIcon className="traffic-icon" icon={faTrafficLight} />
-                                On the traffic
-                            </li>
-                        )}
-                    </ul>
                     <ul className="branch" ref={btnBranch}>
                         <li
                             onClick={() => {
@@ -176,7 +151,31 @@ function Location() {
                             </div>
                         </li>
                     </ul>
-                    <div id="map" ref={container}></div>
+                    <div id="map" ref={container}>
+                        <ul className="traffic">
+                            {toggle ? (
+                                <li
+                                    onClick={() => {
+                                        map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+                                        setToggle(!toggle);
+                                    }}
+                                >
+                                    <FontAwesomeIcon className="traffic-icon" icon={faTrafficLight} />
+                                    Off the traffic
+                                </li>
+                            ) : (
+                                <li
+                                    onClick={() => {
+                                        map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+                                        setToggle(!toggle);
+                                    }}
+                                >
+                                    <FontAwesomeIcon className="traffic-icon" icon={faTrafficLight} />
+                                    On the traffic
+                                </li>
+                            )}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </main>
