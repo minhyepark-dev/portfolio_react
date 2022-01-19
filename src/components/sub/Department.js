@@ -4,13 +4,9 @@ import { useEffect, useState } from "react";
 function Department() {
     const base = process.env.PUBLIC_URL;
     const [list, setList] = useState([]);
-    // const myPath = document.querySelector("path");
-    // let length = myPath.getTotalLength();
-    // console.log(length);
-    //1697.829833984375
+
     useEffect(() => {
         axios.get(`${base}/dbs/department.json`).then((json) => {
-            console.log(json.data.data);
             setList(json.data.data);
         });
     }, []);

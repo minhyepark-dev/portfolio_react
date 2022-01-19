@@ -50,7 +50,7 @@ function Join() {
         //변경할 err객체내용을 반환해주는 check함수 호출
         setErr(check(val));
         // console.log(err);
-        console.log(val);
+        // console.log(val);
     };
 
     const text =
@@ -94,7 +94,7 @@ function Join() {
     useEffect(() => {
         //해당 코드 블록안에서 err스테이트에 담겨있는 객체값이 비어있으면
         //모든 인증을 통과한 상태라서 회원가입 완료처리
-        console.log(err);
+        // console.log(err);
         const len = Object.keys(err).length;
         if (len === 0 && isSubmit) {
             console.log("인증 성공");

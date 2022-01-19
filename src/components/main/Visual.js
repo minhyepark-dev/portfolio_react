@@ -2,10 +2,9 @@ import { useEffect, useRef } from "react";
 
 function Visual() {
     const base = process.env.PUBLIC_URL;
-    const text = useRef(null);
     const main = useRef(null);
+    const text = useRef(null);
     const mouseMove = (e) => {
-        // console.log(e.pageX, e.pageY);
         const mouseX = e.pageX;
         const mouseY = e.pageY;
         const width = parseFloat(getComputedStyle(text.current).width);
