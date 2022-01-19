@@ -48,7 +48,7 @@ function Youtube() {
                                         <img src={item.snippet.thumbnails.medium.url} alt="" />
                                     </div>
                                     <div className="txt">
-                                        <h2>{tit_len > 40 ? (tit = tit.substr(0, 40) + "...") : tit}</h2>
+                                        <h2>{tit_len > 36 ? (tit = tit.substr(0, 36) + "...") : tit}</h2>
                                         <p>{desc_len > 50 ? (desc = desc.substr(0, 100) + "...") : desc}</p>
                                     </div>
                                 </div>
