@@ -116,10 +116,11 @@
                 font-size: 22px;
                 margin-bottom: 50px;
             }
-            .slider {
+            .slider-wrap .slider {
                 ul {
                     li {
                         .slider-content {
+                            width: 100%;
                             h3 {
                                 font-size: 18px;
                             }

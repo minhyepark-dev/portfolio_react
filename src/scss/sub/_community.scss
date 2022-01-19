@@ -11,15 +11,16 @@
                 margin-right: 10px;
                 border: 1px solid #a5abb0;
                 padding: 0 30px;
-                // text-align: center;
                 cursor: pointer;
                 transition: 0.5s;
-                &:hover {
-                    border: 1px solid $baseColor;
-                    h2 {
-                        transform: translateY(-10px);
-                        color: $baseColor;
-                        font-weight: bold;
+                @media (hover: hover) {
+                    &:hover {
+                        border: 1px solid $baseColor;
+                        h2 {
+                            transform: translateY(-10px);
+                            color: $baseColor;
+                            font-weight: bold;
+                        }
                     }
                 }
                 &:nth-of-type(3) {
@@ -44,8 +45,6 @@
             }
         }
         section {
-            border-top: 2px solid $baseColor;
-            border-bottom: 2px solid $baseColor;
             .list {
                 display: none;
                 &.on {

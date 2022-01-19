@@ -31,9 +31,11 @@
                             transition: 0.5s;
                             filter: grayscale(1);
                         }
-                        &:hover {
-                            img {
-                                filter: none;
+                        @media (hover: hover) {
+                            &:hover {
+                                img {
+                                    filter: none;
+                                }
                             }
                         }
                     }
@@ -88,6 +90,13 @@
     }
 }
 
+@media screen and (max-width: $laptop) {
+    .youtube .inner .frame article {
+        .inner .pic img {
+            filter: none;
+        }
+    }
+}
 @media screen and (max-width: $tablet) {
     .youtube .inner .frame article {
         width: 50%;

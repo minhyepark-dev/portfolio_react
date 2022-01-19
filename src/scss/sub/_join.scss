@@ -9,7 +9,6 @@
             flex-direction: column;
             align-content: space-around;
             height: 500px;
-            // text-transform: uppercase;
             font: bold 40px/1 "Italiana";
             letter-spacing: 5px;
             color: $pointColor;
@@ -186,9 +185,11 @@
                                     &:nth-of-type(1) {
                                         margin-right: 10px;
                                     }
-                                    &:hover {
-                                        background: $pointColor;
-                                        color: #fff;
+                                    @media (hover: hover) {
+                                        &:hover {
+                                            background: $pointColor;
+                                            color: #fff;
+                                        }
                                     }
                                 }
                             }
@@ -306,6 +307,10 @@
                                     text-align: center;
                                     input {
                                         font-size: 14px;
+                                        &[type="submit"] {
+                                            background: $pointColor;
+                                            color: #fff;
+                                        }
                                     }
                                 }
                             }
@@ -343,6 +348,16 @@
                     }
                     .member-info {
                         padding: 0 20px;
+                        ul {
+                            li {
+                                &.btns {
+                                    width: 100%;
+                                    input {
+                                        width: calc(50% - 5px);
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

@@ -73,9 +73,11 @@
                             filter: grayscale(0.8);
                             transition: 0.5s;
                         }
-                        &:hover {
-                            img {
-                                filter: grayscale(0);
+                        @media (hover: hover) {
+                            &:hover {
+                                img {
+                                    filter: grayscale(0);
+                                }
                             }
                         }
                     }
@@ -126,13 +128,32 @@
     }
 }
 
+@media screen and (max-width: $laptop) {
+    .gallery .inner > section article {
+        .inner {
+            .pic {
+                img {
+                    filter: none;
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width: $tablet) {
     .gallery .inner > section article {
         width: 50%;
     }
 }
 @media screen and (max-width: $mobile) {
-    .gallery .inner > section article {
-        width: 100%;
+    .gallery .inner > section {
+        .search-box {
+            width: 80%;
+        }
+        article {
+            width: 100%;
+        }
+    }
+    .gallery .pop span {
+        top: 5vw;
     }
 }

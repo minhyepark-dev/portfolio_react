@@ -203,6 +203,8 @@
                 width: 100%;
             }
             .text {
+                height: auto;
+                padding-bottom: 50px;
                 h2 {
                     font-size: 32px;
                 }
@@ -211,6 +213,9 @@
                 }
                 p {
                     font-size: 14px;
+                }
+                .signature {
+                    bottom: -45px;
                 }
             }
         }
