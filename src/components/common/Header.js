@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function Header() {
@@ -14,6 +14,11 @@ function Header() {
         body.classList.toggle("on");
         //menuMo에 on이 있으면 제거, 없으면 추가
         nav.current.classList.toggle("on");
+    };
+    const handleClick = () => {
+        btn.current.classList.remove("on");
+        body.classList.remove("on");
+        nav.current.classList.remove("on");
     };
     return (
         <header>
@@ -60,39 +65,39 @@ function Header() {
                 </div>
                 <nav className="menu-mobile" ref={nav}>
                     <h1>
-                        <NavLink exact to="/">
+                        <NavLink exact to="/" onClick={handleClick}>
                             Doremi
                         </NavLink>
                         <span>WE ARE YOUR ENERGY</span>
                     </h1>
                     <ul id="gnb-mobile">
                         <li>
-                            <NavLink activeStyle={active} exact to="/department">
+                            <NavLink activeStyle={active} exact to="/department" onClick={handleClick}>
                                 Department
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink activeStyle={active} exact to="/community">
+                            <NavLink activeStyle={active} exact to="/community" onClick={handleClick}>
                                 Community
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink activeStyle={active} exact to="/gallery">
+                            <NavLink activeStyle={active} exact to="/gallery" onClick={handleClick}>
                                 Gallery
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink activeStyle={active} exact to="/youtube">
+                            <NavLink activeStyle={active} exact to="/youtube" onClick={handleClick}>
                                 Youtube
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink activeStyle={active} exact to="/location">
+                            <NavLink activeStyle={active} exact to="/location" onClick={handleClick}>
                                 Location
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink activeStyle={active} exact to="/join">
+                            <NavLink activeStyle={active} exact to="/join" onClick={handleClick}>
                                 Join
                             </NavLink>
                         </li>
