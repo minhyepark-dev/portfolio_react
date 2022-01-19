@@ -8,10 +8,18 @@ function Collection() {
                         <img src={base + "/img/main.jpg"} alt="" />
                     </div>
                     <div className="img">
-                        <img src={base + "/img/main2.jpg"} alt="" />
-                        <img src={base + "/img/main3.jpg"} alt="" />
-                        <img src={base + "/img/main4.jpg"} alt="" />
-                        <img src={base + "/img/main5.jpg"} alt="" />
+                        <div className="img-inner">
+                            <img src={base + "/img/main2.jpg"} alt="" />
+                        </div>
+                        <div className="img-inner">
+                            <img src={base + "/img/main3.jpg"} alt="" />
+                        </div>
+                        <div className="img-inner">
+                            <img src={base + "/img/main4.jpg"} alt="" />
+                        </div>
+                        <div className="img-inner">
+                            <img src={base + "/img/main5.jpg"} alt="" />
+                        </div>
                     </div>
                     <div className="img">
                         <img src={base + "/img/main6.jpg"} alt="" />
