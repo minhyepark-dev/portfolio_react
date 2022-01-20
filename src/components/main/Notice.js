@@ -14,7 +14,7 @@ function Notice() {
         init();
     }, []);
     return (
-        <main className="notice">
+        <main className="notice myScroll">
             <div className="inner">
                 <h2>The latest</h2>
                 <div className="slider-wrap">

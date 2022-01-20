@@ -1,6 +1,6 @@
 function Info() {
     return (
-        <main id="info">
+        <main id="info" className="myScroll">
             <div className="inner">
                 <div className="text">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>

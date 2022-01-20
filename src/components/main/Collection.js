@@ -1,7 +1,7 @@
 function Collection() {
     const base = process.env.PUBLIC_URL;
     return (
-        <main className="collection">
+        <main className="collection myScroll">
             <div className="inner">
                 <div className="img-wrap">
                     <div className="img">

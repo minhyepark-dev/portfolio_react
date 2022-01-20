@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { NavLink } from "react-router-dom";
 
 function Header() {
@@ -21,7 +21,7 @@ function Header() {
         nav.current.classList.remove("on");
     };
     return (
-        <header>
+        <header className="myScroll">
             <div className="inner">
                 <h1>
                     <NavLink exact to="/">

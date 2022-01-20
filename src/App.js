@@ -1,15 +1,12 @@
 import "./css/style.css";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 // import common component
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 
 // import main component
-import Visual from "./components/main/Visual";
-import Info from "./components/main/Info";
-import Notice from "./components/main/Notice";
-import Collection from "./components/main/Collection";
+import Main from "./components/main/Main";
 
 // import sub component
 import Department from "./components/sub/Department";
@@ -22,13 +19,14 @@ import Join from "./components/sub/Join";
 function App() {
     return (
         <div className="App">
-            <Header />
-            <Route exact path="/">
-                <Visual />
-                <Info />
-                <Notice />
-                <Collection />
-            </Route>
+            <Switch>
+                <Route exact path="/">
+                    <Main />
+                </Route>
+                <Route path="/">
+                    <Header />
+                </Route>
+            </Switch>
             <Route exact path="/department" component={Department}></Route>
             <Route exact path="/community" component={Community}></Route>
             <Route exact path="/gallery" component={Gallery}></Route>
