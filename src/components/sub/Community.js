@@ -67,9 +67,12 @@ function Community() {
                                         onClick={(e) => {
                                             if (e.currentTarget.nextSibling.classList.contains("on")) {
                                                 e.currentTarget.nextSibling.classList.remove("on");
+                                                e.currentTarget.querySelector(".down").classList.add("on");
+                                                e.currentTarget.querySelector(".up").classList.remove("on");
                                             } else {
                                                 e.currentTarget.nextSibling.classList.add("on");
-                                                e.currentTarget.lastElementChild.querySelector(".off").classList.add("on");
+                                                e.currentTarget.querySelector(".up").classList.add("on");
+                                                e.currentTarget.querySelector(".down").classList.remove("on");
                                             }
                                         }}
                                     >
@@ -77,7 +80,8 @@ function Community() {
                                         <div className="right">
                                             <span>{item.write}</span>
                                             <em>{item.date}</em>
-                                            <FontAwesomeIcon className="icon-arrow" icon={faChevronDown} />
+                                            <FontAwesomeIcon className="icon-arrow down on" icon={faChevronDown} />
+                                            <FontAwesomeIcon className="icon-arrow up" icon={faChevronUp} />
                                         </div>
                                     </div>
                                     <div className="answer">
@@ -96,8 +100,12 @@ function Community() {
                                         onClick={(e) => {
                                             if (e.currentTarget.nextSibling.classList.contains("on")) {
                                                 e.currentTarget.nextSibling.classList.remove("on");
+                                                e.currentTarget.querySelector(".down").classList.add("on");
+                                                e.currentTarget.querySelector(".up").classList.remove("on");
                                             } else {
                                                 e.currentTarget.nextSibling.classList.add("on");
+                                                e.currentTarget.querySelector(".up").classList.add("on");
+                                                e.currentTarget.querySelector(".down").classList.remove("on");
                                             }
                                         }}
                                     >
@@ -105,7 +113,8 @@ function Community() {
                                         <div className="right">
                                             <span>{item.write}</span>
                                             <em>{item.date}</em>
-                                            <FontAwesomeIcon className="icon-arrow" icon={faChevronDown} />
+                                            <FontAwesomeIcon className="icon-arrow down on" icon={faChevronDown} />
+                                            <FontAwesomeIcon className="icon-arrow up" icon={faChevronUp} />
                                         </div>
                                     </div>
                                     <div className="answer">
@@ -124,8 +133,12 @@ function Community() {
                                         onClick={(e) => {
                                             if (e.currentTarget.nextSibling.classList.contains("on")) {
                                                 e.currentTarget.nextSibling.classList.remove("on");
+                                                e.currentTarget.querySelector(".down").classList.add("on");
+                                                e.currentTarget.querySelector(".up").classList.remove("on");
                                             } else {
                                                 e.currentTarget.nextSibling.classList.add("on");
+                                                e.currentTarget.querySelector(".up").classList.add("on");
+                                                e.currentTarget.querySelector(".down").classList.remove("on");
                                             }
                                         }}
                                     >
@@ -133,7 +146,8 @@ function Community() {
                                         <div className="right">
                                             <span>{item.write}</span>
                                             <em>{item.date}</em>
-                                            <FontAwesomeIcon className="icon-arrow" icon={faChevronDown} />
+                                            <FontAwesomeIcon className="icon-arrow down on" icon={faChevronDown} />
+                                            <FontAwesomeIcon className="icon-arrow up" icon={faChevronUp} />
                                         </div>
                                     </div>
                                     <div className="answer">
