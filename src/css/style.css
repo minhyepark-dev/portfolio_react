@@ -73,7 +73,8 @@ header {
         letter-spacing: 0.21em; }
     header .inner #gnb {
       position: absolute;
-      bottom: 10px;
+      top: 50%;
+      transform: translateY(-50%);
       right: 0; }
       header .inner #gnb li {
         float: left; }
@@ -261,7 +262,7 @@ footer {
       color: #b46927;
       text-align: center; }
 
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: 1196px) {
   header .inner {
     width: 100%; }
     header .inner > h1 {
@@ -380,7 +381,7 @@ footer {
       object-fit: cover;
       margin: 0 auto; }
 
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: 1196px) {
   .visual .inner {
     width: 100%; }
     .visual .inner p:nth-of-type(1) {
@@ -388,12 +389,6 @@ footer {
     .visual .inner p:nth-of-type(2) {
       right: 20px; }
     .visual .inner h2 {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-      color: #b46927;
       font-size: 10vw; } }
 @media screen and (max-width: 769px) {
   .visual .inner img {
@@ -467,7 +462,7 @@ footer {
             letter-spacing: 2px;
             text-transform: uppercase; }
 
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: 1196px) {
   #info .inner {
     width: 100%; }
     #info .inner .text {
@@ -588,7 +583,7 @@ footer {
                 .notice .inner .slider-wrap .slider ul li .slider-content a:hover::after {
                   width: 100%; }
 
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: 1196px) {
   .notice .inner .slider-wrap .slider {
     width: 100%; } }
 @media screen and (max-width: 769px) {
@@ -614,7 +609,7 @@ footer {
         font-size: 14px; } }
 .collection {
   background: #f6f2ef;
-  padding-top: 100px; }
+  padding: 130px 0; }
   .collection .inner .img-wrap {
     display: flex;
     justify-content: center;
@@ -644,20 +639,20 @@ footer {
           overflow: hidden; }
 
 @media screen and (max-width: 769px) {
-  .collection .inner .img-wrap {
-    flex-wrap: wrap;
-    height: 100%; }
-    .collection .inner .img-wrap .img {
-      width: 100%;
-      height: 300px; }
-      .collection .inner .img-wrap .img:nth-of-type(2) {
-        height: auto; }
-        .collection .inner .img-wrap .img:nth-of-type(2) img {
-          width: 200px;
-          height: 200px;
-          margin-bottom: 10px; }
-          .collection .inner .img-wrap .img:nth-of-type(2) img:nth-of-type(4) {
-            margin-bottom: 0; } }
+  .collection {
+    padding: 100px 0; }
+    .collection .inner .img-wrap {
+      flex-wrap: wrap;
+      height: 100%; }
+      .collection .inner .img-wrap .img {
+        width: 100%;
+        height: 300px; }
+        .collection .inner .img-wrap .img:nth-of-type(2) {
+          height: auto; }
+          .collection .inner .img-wrap .img:nth-of-type(2) .img-inner img {
+            height: 200px; }
+            .collection .inner .img-wrap .img:nth-of-type(2) .img-inner img:nth-of-type(4) {
+              margin-bottom: 0; } }
 @media screen and (max-width: 460px) {
   .collection .inner .img-wrap .img {
     margin: 5px 10px; }
@@ -670,6 +665,28 @@ footer {
           width: 100%;
           height: 300px;
           margin-bottom: 5px; } }
+#btns {
+  position: fixed;
+  top: 50%;
+  right: 7vw;
+  transform: translateY(-50%); }
+  #btns li {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #a5abb0;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 0.5s; }
+    #btns li.on {
+      height: 50px; }
+
+@media screen and (max-width: 1196px) {
+  #btns {
+    right: 3vw; } }
+@media screen and (max-width: 769px) {
+  #btns {
+    display: none; } }
 .department .inner .ceo::after {
   content: "";
   display: block;
@@ -783,7 +800,7 @@ footer {
 @keyframes draw {
   100% {
     stroke-dashoffset: 0; } }
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: 1196px) {
   .department .inner .ceo {
     padding: 0 20px; }
     .department .inner .ceo > div {
@@ -941,7 +958,10 @@ footer {
         margin-left: 30px;
         font-size: 20px;
         vertical-align: middle;
-        color: #b46927; }
+        color: #b46927;
+        display: none; }
+        .community .inner section .list article .question .right .icon-arrow.on {
+          display: inline-block; }
   .community .inner section .list article .answer {
     padding: 50px 30px;
     background: #f6f2ef;
@@ -953,7 +973,7 @@ footer {
       display: block;
       border-bottom: 2px solid #0d211a; }
 
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: 1196px) {
   .community .inner .news {
     padding: 0 20px; }
     .community .inner .news .box h2 {
@@ -1105,7 +1125,7 @@ footer {
     cursor: pointer;
     text-transform: uppercase; }
 
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: 1196px) {
   .gallery .inner > section article .inner .pic img {
     filter: none; } }
 @media screen and (max-width: 769px) {
@@ -1140,7 +1160,8 @@ footer {
       width: 100%;
       height: 200px;
       margin-bottom: 20px;
-      cursor: pointer; }
+      cursor: pointer;
+      position: relative; }
       .youtube .inner .frame article .inner .pic img {
         width: 100%;
         height: 100%;
@@ -1150,6 +1171,12 @@ footer {
       @media (hover: hover) {
         .youtube .inner .frame article .inner .pic:hover img {
           filter: none; } }
+      .youtube .inner .frame article .inner .pic .icon-play {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 30px;
+        color: #fff; }
     .youtube .inner .frame article .inner .txt h2 {
       font-size: 16px;
       line-height: 1.2;
@@ -1189,7 +1216,7 @@ footer {
     cursor: pointer;
     text-transform: uppercase; }
 
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: 1196px) {
   .youtube .inner .frame article .inner .pic img {
     filter: none; } }
 @media screen and (max-width: 769px) {
@@ -1245,23 +1272,6 @@ footer {
     content: "";
     display: block;
     clear: both; }
-  .location .inner .map-wrap #map {
-    width: calc(100% - 300px);
-    height: 100%;
-    float: right; }
-  .location .inner .map-wrap .traffic {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 2; }
-    .location .inner .map-wrap .traffic li {
-      background-color: #b46927;
-      color: #fff;
-      padding: 15px 20px;
-      font-size: 14px;
-      cursor: pointer; }
-      .location .inner .map-wrap .traffic li .traffic-icon {
-        margin-right: 10px; }
   .location .inner .map-wrap .branch {
     width: 300px;
     height: 100%;
@@ -1299,6 +1309,49 @@ footer {
             font-size: 26px;
             margin-bottom: 20px;
             line-height: 1; }
+  .location .inner .map-wrap .map-inner {
+    width: calc(100% - 300px);
+    height: 100%;
+    position: relative;
+    float: right; }
+    .location .inner .map-wrap .map-inner .custom_typecontrol {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2; }
+      .location .inner .map-wrap .map-inner .custom_typecontrol span {
+        display: block;
+        width: 70px;
+        height: 40px;
+        float: left;
+        text-align: center;
+        cursor: pointer;
+        font: 14px/40px "Questrial"; }
+      .location .inner .map-wrap .map-inner .custom_typecontrol .btn {
+        background: #fff; }
+        @media (hover: hover) {
+          .location .inner .map-wrap .map-inner .custom_typecontrol .btn:hover {
+            color: #fff;
+            background: #b46927; } }
+      .location .inner .map-wrap .map-inner .custom_typecontrol .selected_btn {
+        color: #fff;
+        background: #b46927; }
+    .location .inner .map-wrap .map-inner .traffic {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      z-index: 2; }
+      .location .inner .map-wrap .map-inner .traffic li {
+        background-color: #b46927;
+        color: #fff;
+        padding: 15px 20px;
+        font-size: 14px;
+        cursor: pointer; }
+        .location .inner .map-wrap .map-inner .traffic li .traffic-icon {
+          margin-right: 10px; }
+    .location .inner .map-wrap .map-inner #map {
+      width: 100%;
+      height: 100%; }
 
 @media screen and (max-width: 769px) {
   .location .inner .contact h2 {
@@ -1318,7 +1371,7 @@ footer {
           font-size: 20px; }
   .location .inner .map-wrap {
     height: auto; }
-    .location .inner .map-wrap #map {
+    .location .inner .map-wrap .map-inner {
       width: 100%;
       height: 400px;
       float: none; }
@@ -1523,26 +1576,7 @@ footer {
               background: #b46927;
               color: #fff; } }
 
-@media screen and (max-width: 1179px) {
-  .join .inner .success-join {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: space-around;
-    height: 500px;
-    font: bold 40px/1 "Italiana";
-    letter-spacing: 5px;
-    color: #b46927; }
-    .join .inner .success-join .success-icon {
-      display: block;
-      margin: 0 auto 50px;
-      color: #b46927;
-      font-size: 70px; }
-    .join .inner .success-join p {
-      text-align: center; }
+@media screen and (max-width: 1196px) {
   .join .inner form fieldset .join-banner::before {
     height: 20vw;
     left: 10vw; }
@@ -1559,6 +1593,12 @@ footer {
       left: 0;
       transform: rotate(45deg); } }
 @media screen and (max-width: 769px) {
+  .join .inner .success-join {
+    font-size: 30px;
+    letter-spacing: 4px; }
+    .join .inner .success-join .success-icon {
+      margin: 0 auto 30px;
+      font-size: 50px; }
   .join .inner form fieldset h3 {
     font-size: 18px; }
   .join .inner form fieldset > textarea {
@@ -1599,6 +1639,12 @@ footer {
           background: #b46927;
           color: #fff; } }
 @media screen and (max-width: 460px) {
+  .join .inner .success-join {
+    font-size: 16px;
+    letter-spacing: 3px; }
+    .join .inner .success-join .success-icon {
+      margin: 0 auto 30px;
+      font-size: 40px; }
   .join .inner form fieldset > textarea {
     height: 100px; }
   .join .inner form fieldset .agreement {

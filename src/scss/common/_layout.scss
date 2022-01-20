@@ -20,7 +20,8 @@ header {
         }
         #gnb {
             position: absolute;
-            bottom: 10px;
+            top: 50%;
+            transform: translateY(-50%);
             right: 0;
             li {
                 float: left;

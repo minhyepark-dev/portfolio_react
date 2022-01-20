@@ -1,6 +1,6 @@
 .collection {
     background: #f6f2ef;
-    padding-top: 100px;
+    padding: 130px 0;
     .inner {
         .img-wrap {
             display: flex;
@@ -41,6 +41,7 @@
 
 @media screen and (max-width: $tablet) {
     .collection {
+        padding: 100px 0;
         .inner {
             .img-wrap {
                 flex-wrap: wrap;
@@ -50,12 +51,12 @@
                     height: 300px;
                     &:nth-of-type(2) {
                         height: auto;
-                        img {
-                            width: 200px;
-                            height: 200px;
-                            margin-bottom: 10px;
-                            &:nth-of-type(4) {
-                                margin-bottom: 0;
+                        .img-inner {
+                            img {
+                                height: 200px;
+                                &:nth-of-type(4) {
+                                    margin-bottom: 0;
+                                }
                             }
                         }
                     }

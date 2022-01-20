@@ -1,0 +1,29 @@
+#btns {
+    position: fixed;
+    top: 50%;
+    right: 7vw;
+    transform: translateY(-50%);
+    li {
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background: #a5abb0;
+        margin-bottom: 20px;
+        cursor: pointer;
+        transition: 0.5s;
+        &.on {
+            height: 50px;
+        }
+    }
+}
+
+@media screen and (max-width: $laptop) {
+    #btns {
+        right: 3vw;
+    }
+}
+@media screen and (max-width: $tablet) {
+    #btns {
+        display: none;
+    }
+}

@@ -204,29 +204,6 @@
 @media screen and (max-width: $laptop) {
     .join {
         .inner {
-            .success-join {
-                position: relative;
-                z-index: 1;
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                flex-direction: column;
-                align-content: space-around;
-                height: 500px;
-                // text-transform: uppercase;
-                font: bold 40px/1 "Italiana";
-                letter-spacing: 5px;
-                color: $pointColor;
-                .success-icon {
-                    display: block;
-                    margin: 0 auto 50px;
-                    color: $pointColor;
-                    font-size: 70px;
-                }
-                p {
-                    text-align: center;
-                }
-            }
             form {
                 fieldset {
                     .join-banner {
@@ -258,6 +235,14 @@
 @media screen and (max-width: $tablet) {
     .join {
         .inner {
+            .success-join {
+                font-size: 30px;
+                letter-spacing: 4px;
+                .success-icon {
+                    margin: 0 auto 30px;
+                    font-size: 50px;
+                }
+            }
             form {
                 fieldset {
                     h3 {
@@ -324,6 +309,14 @@
 @media screen and (max-width: $mobile) {
     .join {
         .inner {
+            .success-join {
+                font-size: 16px;
+                letter-spacing: 3px;
+                .success-icon {
+                    margin: 0 auto 30px;
+                    font-size: 40px;
+                }
+            }
             form {
                 fieldset {
                     > textarea {
