@@ -1,9 +1,5 @@
-/*
-    1. 유튜브 서버로부터 데이터 요청을 해서 전달받은 데이터를 state에 옮겨담기
-    2. 해당 state값을 활용해서 동적으로 가상돔 생성
-    3. 각각의 가상돔 요소 클릭시 레이어팝업 동적으로 생성
-    4. 해당 레이어팝업 안쪽에 데이터와 순서관련 state값을 활용해서 세부 컨텐츠 출력
-*/
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -45,6 +41,7 @@ function Youtube() {
                                         }}
                                     >
                                         <img src={item.snippet.thumbnails.medium.url} alt="" />
+                                        <FontAwesomeIcon className="icon-play" icon={faPlayCircle} />
                                     </div>
                                     <div className="txt">
                                         <h2>{tit_len > 36 ? (tit = tit.substr(0, 36) + "...") : tit}</h2>
