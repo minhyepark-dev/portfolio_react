@@ -19,7 +19,7 @@ function Location() {
         },
         {
             title: "지점1",
-            latlng: new kakao.maps.LatLng(37.50707728716868, 126.75635104990461),
+            latlng: new kakao.maps.LatLng(37.57975318699628, 126.97709192859216),
             imgSrc: process.env.PUBLIC_URL + "/img/pin2.png",
             imgSize: new kakao.maps.Size(50, 50),
             imgPos: { offset: new kakao.maps.Point(25, 55) },
@@ -33,6 +33,19 @@ function Location() {
         },
     ];
     const [mapInfo, setMapInfo] = useState(info);
+    function setMapType(maptype) {
+        var roadmapControl = document.getElementById("btnRoadmap");
+        var skyviewControl = document.getElementById("btnSkyview");
+        if (maptype === "roadmap") {
+            map.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);
+            roadmapControl.className = "selected_btn";
+            skyviewControl.className = "btn";
+        } else {
+            map.setMapTypeId(kakao.maps.MapTypeId.HYBRID);
+            skyviewControl.className = "selected_btn";
+            roadmapControl.className = "btn";
+        }
+    }
     useEffect(() => {
         const options = {
             center: mapInfo[index].latlng,
@@ -151,7 +164,27 @@ function Location() {
                             </div>
                         </li>
                     </ul>
-                    <div id="map" ref={container}>
+                    <div className="map-inner">
+                        <div className="custom_typecontrol radius_border">
+                            <span
+                                id="btnRoadmap"
+                                className="selected_btn"
+                                onClick={() => {
+                                    setMapType("roadmap");
+                                }}
+                            >
+                                Map
+                            </span>
+                            <span
+                                id="btnSkyview"
+                                className="btn"
+                                onClick={() => {
+                                    setMapType("skyview");
+                                }}
+                            >
+                                Sky View
+                            </span>
+                        </div>
                         <ul className="traffic">
                             {toggle ? (
                                 <li
@@ -175,6 +208,7 @@ function Location() {
                                 </li>
                             )}
                         </ul>
+                        <div id="map" ref={container}></div>
                     </div>
                 </div>
             </div>
