@@ -64,8 +64,6 @@ function Youtube() {
                         <iframe
                             src={"https://www.youtube.com/embed/" + data[index].snippet.resourceId.videoId}
                             frameBorder="0"
-                            width="100%"
-                            height="100%"
                             allowFullScreen
                         ></iframe>
                     </figure>
