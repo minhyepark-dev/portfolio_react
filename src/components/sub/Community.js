@@ -1,15 +1,16 @@
-import axios from "axios";
+import { useSelector } from "react-redux";
 import { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 function Community() {
-    const base = process.env.PUBLIC_URL;
-    const [posts, setPosts] = useState([]);
     let article = useRef(null);
     const btnTab = useRef(null);
     const boxTab = useRef(null);
     const [enable, setEnable] = useState(true);
+
+    const community = useSelector((state) => state);
+    const notice = community.communityReducer.community;
 
     const handleTab = () => {
         const btns = btnTab.current.querySelectorAll("div");
@@ -33,9 +34,6 @@ function Community() {
     };
 
     useEffect(() => {
-        axios.get(`${base}/dbs/community.json`).then((json) => {
-            setPosts(json.data.data);
-        });
         handleTab();
     }, []);
     return (
@@ -59,7 +57,7 @@ function Community() {
                 </div>
                 <section ref={boxTab}>
                     <div className="list on">
-                        {posts.map((item, index) => {
+                        {notice.map((item, index) => {
                             return (
                                 <article key={index} ref={article}>
                                     <div
@@ -92,7 +90,7 @@ function Community() {
                         })}
                     </div>
                     <div className="list">
-                        {posts.map((item, index) => {
+                        {notice.map((item, index) => {
                             return (
                                 <article key={index} ref={article}>
                                     <div
@@ -125,7 +123,7 @@ function Community() {
                         })}
                     </div>
                     <div className="list">
-                        {posts.map((item, index) => {
+                        {notice.map((item, index) => {
                             return (
                                 <article key={index} ref={article}>
                                     <div

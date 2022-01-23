@@ -3,15 +3,30 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
+import { setCommunity } from "../../redux/actions.js";
 
 function Notice() {
+    const base = process.env.PUBLIC_URL;
+
     let box = useRef(null);
+    const community = useSelector((state) => state);
+    const notice = community.communityReducer.community;
+    const dispatch = useDispatch();
+    const fetchCommunity = async () => {
+        const response = await axios.get(`${base}/dbs/community.json`).catch((err) => {
+            console.error(err);
+        });
+        dispatch(setCommunity(response.data.data));
+    };
     const init = () => {
         box.current.style.marginLeft = "-100%";
         box.current.prepend(box.current.lastElementChild);
     };
     useEffect(() => {
         init();
+        fetchCommunity();
     }, []);
     return (
         <main className="notice myScroll">
@@ -54,7 +69,27 @@ function Notice() {
                     </div>
                     <div className="slider">
                         <ul ref={box}>
-                            <li>
+                            {notice.map((item, index) => {
+                                return (
+                                    <li key={index}>
+                                        <div className="slider-content">
+                                            <h3>{item.title}</h3>
+                                            <p>{item.answer}</p>
+                                            <Link exact="true" to="/community">
+                                                Read More
+                                                <FontAwesomeIcon
+                                                    className="icon-arrow"
+                                                    icon={faArrowRight}
+                                                    style={{
+                                                        marginLeft: 10,
+                                                    }}
+                                                />
+                                            </Link>
+                                        </div>
+                                    </li>
+                                );
+                            })}
+                            {/* <li>
                                 <div className="slider-content">
                                     <h3>Lorem ipsum dolor sit amet.</h3>
                                     <p>
@@ -119,7 +154,7 @@ function Notice() {
                                         />
                                     </Link>
                                 </div>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>
