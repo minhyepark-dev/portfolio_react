@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
 import Masonry from "react-masonry-component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 const base = process.env.PUBLIC_URL;
 const body = document.querySelector("body");
 
@@ -14,12 +16,18 @@ const masonryOptions = {
 
 function Gallery() {
     const [items, setItems] = useState([]);
+
     let [isPop, setIsPop] = useState(false);
     let [index, setIndex] = useState(0);
     let [loading, setLoading] = useState(true);
     let [enableClick, setEnableClick] = useState(true);
+
     let list = useRef(null);
     let input = useRef(null);
+
+    const gallery = useSelector((state) => state);
+    const galData = gallery.galleryReducer.gallery;
+    console.log(galData);
 
     useEffect(() => {
         getFlickr({ type: "interest", count: 50 });
