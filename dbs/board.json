@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "title": "Kapost Wins 2020 MarTech Breakthrough Award",
+            "write": "Chris Kruse",
+            "date": "2022-01-26",
+            "answer" : "Kapost won the “Best Content Performance Management Solution” award in the 2020 MarTech Breakthroughs program conducted by MarTech Breakthrough, a leading market intelligence organization that recognizes the top companies, technologies and products in the global marketing, sales and advertising technology industry today."
+        },
+        {
+            "title": "Upland Software Acquires Objectif Lune",
+            "write": "Devin Richards",
+            "date": "2022-01-22",
+            "answer" : "AUSTIN, Texas--(BUSINESS WIRE)-- Upland Software, Inc. (Nasdaq: UPLD) announced that it has acquired Objectif Lune Inc., an enterprise software leader in document composition and business communication automation. With the addition of Objectif Lune, Upland expands its global document workflow product library by adding the capability to modernize complex, paper-based documents for large-volume print production as well as automated delivery across web, email, and mobile platforms."
+        },
+        {
+            "title": "Accelerate the Remote-Hybrid Business Transition with Upland FileBound",
+            "write": "Matt Caleant",
+            "date": "2022-01-13",
+            "answer" : "The pace of day-to-day business has quickly accelerated as it has become more digital and cloud-based, yet operating with paper and electronic documents is still a consistent bottleneck for organizations of all sizes and industries, said Karen Cummings, EVP and General Manager at Upland Software. As organizations seek long-lasting solutions to help enable the work of a dispersed workforce, FileBound is providing document management and workflow automation technology that positively impacts how work is done and how quickly organizations can achieve a digitally enabled workforce."
+        },
+        {
+            "title": "Enhanced Forms Functionality",
+            "write": "John Gates",
+            "date": "2022-01-01",
+            "answer" : "Built upon the existing electronic forms foundation, users cannowinteract more easily with external contacts using two new authentication methods - Anonymous and Anonymous with Password - for the FileBound forms portal. Users can create custom electronic forms to automatically capture all changes to web forms, all while retaining complete versioning history to improve transparency and ensure compliance."
+        }
+    ]
+}
