@@ -1,13 +1,18 @@
+import axios from "axios";
 import { useSelector } from "react-redux";
 import { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 function Community() {
+    const base = process.env.PUBLIC_URL;
+
     let article = useRef(null);
     const btnTab = useRef(null);
     const boxTab = useRef(null);
     const [enable, setEnable] = useState(true);
+    const [faq, setFaq] = useState([]);
+    const [board, setBoard] = useState([]);
 
     const community = useSelector((state) => state);
     const notice = community.communityReducer.community;
@@ -48,10 +53,28 @@ function Community() {
                     <div className="box on" onClick={handleTab}>
                         <h2>Q&A</h2>
                     </div>
-                    <div className="box" onClick={handleTab}>
+                    <div
+                        className="box"
+                        onClick={async () => {
+                            handleTab();
+                            await axios.get(`${base}/dbs/faq.json`).then((json) => {
+                                const response = json.data.data;
+                                setFaq(response);
+                            });
+                        }}
+                    >
                         <h2>FAQ</h2>
                     </div>
-                    <div className="box" onClick={handleTab}>
+                    <div
+                        className="box"
+                        onClick={async () => {
+                            handleTab();
+                            await axios.get(`${base}/dbs/board.json`).then((json) => {
+                                const response = json.data.data;
+                                setBoard(response);
+                            });
+                        }}
+                    >
                         <h2>Board</h2>
                     </div>
                 </div>
@@ -74,7 +97,7 @@ function Community() {
                                             }
                                         }}
                                     >
-                                        <h1>{item.title + "1"}</h1>
+                                        <h1>{item.title}</h1>
                                         <div className="right">
                                             <span>{item.write}</span>
                                             <em>{item.date}</em>
@@ -90,7 +113,7 @@ function Community() {
                         })}
                     </div>
                     <div className="list">
-                        {notice.map((item, index) => {
+                        {faq.map((item, index) => {
                             return (
                                 <article key={index} ref={article}>
                                     <div
@@ -107,10 +130,9 @@ function Community() {
                                             }
                                         }}
                                     >
-                                        <h1>{item.title + "2"}</h1>
+                                        <h1>{item.title}</h1>
                                         <div className="right">
                                             <span>{item.write}</span>
-                                            <em>{item.date}</em>
                                             <FontAwesomeIcon className="icon-arrow down on" icon={faChevronDown} />
                                             <FontAwesomeIcon className="icon-arrow up" icon={faChevronUp} />
                                         </div>
@@ -123,7 +145,7 @@ function Community() {
                         })}
                     </div>
                     <div className="list">
-                        {notice.map((item, index) => {
+                        {board.map((item, index) => {
                             return (
                                 <article key={index} ref={article}>
                                     <div
@@ -140,7 +162,7 @@ function Community() {
                                             }
                                         }}
                                     >
-                                        <h1>{item.title + "3"}</h1>
+                                        <h1>{item.title}</h1>
                                         <div className="right">
                                             <span>{item.write}</span>
                                             <em>{item.date}</em>

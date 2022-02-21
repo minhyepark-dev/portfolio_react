@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
 import Masonry from "react-masonry-component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -24,10 +23,6 @@ function Gallery() {
 
     let list = useRef(null);
     let input = useRef(null);
-
-    const gallery = useSelector((state) => state);
-    const galData = gallery.galleryReducer.gallery;
-    console.log(galData);
 
     useEffect(() => {
         getFlickr({ type: "interest", count: 50 });

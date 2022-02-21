@@ -4,6 +4,7 @@ import Info from "./Info";
 import Notice from "./Notice";
 import Collection from "./Collection";
 import Btns from "./Btns";
+import Cookie from "./Cookie";
 import Anime from "../../class/anime.js";
 import { useEffect, useState, useRef } from "react";
 
@@ -53,6 +54,7 @@ function Main() {
     }, [index]);
     return (
         <div className="main-wrap" ref={main}>
+            <Cookie />
             <Header />
             <Visual />
             <Info />
