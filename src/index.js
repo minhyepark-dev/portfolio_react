@@ -1,17 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import store, { Persistor } from "./redux/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 ReactDOM.render(
     <React.StrictMode>
-        <HashRouter>
+        <BrowserRouter basename="/portfolio_react">
             <Provider store={store}>
-                <App />
+                <PersistGate loading={null} persistor={Persistor}>
+                    <App />
+                </PersistGate>
             </Provider>
-        </HashRouter>
+        </BrowserRouter>
     </React.StrictMode>,
     document.getElementById("root")
 );
