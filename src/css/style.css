@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Italiana&family=Questrial&display=swap");
 * {
   margin: 0;
@@ -391,6 +392,10 @@ footer {
     .visual .inner h2 {
       font-size: 10vw; } }
 @media screen and (max-width: 769px) {
+  .visual .inner h2 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important; }
   .visual .inner img {
     width: 50%; } }
 @media screen and (max-width: 460px) {
@@ -580,8 +585,9 @@ footer {
                   display: block;
                   height: 1px;
                   background: #fff; }
-                .notice .inner .slider-wrap .slider ul li .slider-content a:hover::after {
-                  width: 100%; }
+                @media (hover: hover) and (pointer: fine) {
+                  .notice .inner .slider-wrap .slider ul li .slider-content a:hover::after {
+                    width: 100%; } }
 
 @media screen and (max-width: 1196px) {
   .notice .inner .slider-wrap .slider {
@@ -619,15 +625,41 @@ footer {
       width: 33.3333%;
       height: 100%;
       margin: 10px;
-      overflow: hidden; }
+      overflow: hidden;
+      position: relative; }
+      @media (hover: hover) and (pointer: fine) {
+        .collection .inner .img-wrap .img.big:hover .img-text {
+          bottom: 0; }
+        .collection .inner .img-wrap .img.big:hover img {
+          transform: scale(1.2); } }
+      .collection .inner .img-wrap .img .img-text {
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        right: 0;
+        transition: 0.5s;
+        padding: 40px 20px;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff; }
+        .collection .inner .img-wrap .img .img-text h3 {
+          font-size: 20px;
+          margin-bottom: 10px;
+          letter-spacing: 2px;
+          text-transform: uppercase; }
+        .collection .inner .img-wrap .img .img-text p {
+          text-align: right; }
+          .collection .inner .img-wrap .img .img-text p:nth-of-type(1) {
+            margin-bottom: 15px;
+            font-size: 18px;
+            text-transform: capitalize; }
+          .collection .inner .img-wrap .img .img-text p .icon-views {
+            margin-right: 5px;
+            vertical-align: text-bottom; }
       .collection .inner .img-wrap .img img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transition: 0.5s; }
-        @media (hover: hover) {
-          .collection .inner .img-wrap .img img:hover {
-            transform: scale(1.2); } }
       .collection .inner .img-wrap .img:nth-of-type(2) {
         display: flex;
         flex-wrap: wrap;
@@ -636,7 +668,19 @@ footer {
         .collection .inner .img-wrap .img:nth-of-type(2) .img-inner {
           width: calc(50% - 10px);
           height: calc(50% - 10px);
-          overflow: hidden; }
+          overflow: hidden;
+          position: relative; }
+          @media (hover: hover) and (pointer: fine) {
+            .collection .inner .img-wrap .img:nth-of-type(2) .img-inner:hover .img-text {
+              bottom: 0; }
+            .collection .inner .img-wrap .img:nth-of-type(2) .img-inner:hover img {
+              transform: scale(1.2); } }
+          .collection .inner .img-wrap .img:nth-of-type(2) .img-inner .img-text {
+            padding: 20px 10px; }
+            .collection .inner .img-wrap .img:nth-of-type(2) .img-inner .img-text h3 {
+              font-size: 18px; }
+            .collection .inner .img-wrap .img:nth-of-type(2) .img-inner .img-text p:nth-of-type(1) {
+              font-size: 16px; }
 
 @media screen and (max-width: 769px) {
   .collection {
@@ -687,6 +731,59 @@ footer {
 @media screen and (max-width: 769px) {
   #btns {
     display: none; } }
+aside#popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  padding: 40px;
+  width: 360px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #b46927;
+  color: #0d211a;
+  font-family: "맑은 고딕";
+  text-align: center; }
+  aside#popup::after {
+    content: "";
+    display: block;
+    clear: both; }
+  aside#popup .content {
+    margin-bottom: 30px; }
+    aside#popup .content h1 {
+      color: #0d211a;
+      font: bold 30px/1 "Italiana";
+      text-transform: uppercase;
+      letter-spacing: 0.21em;
+      margin-bottom: 30px; }
+    aside#popup .content p {
+      font-size: 14px;
+      margin-bottom: 15px;
+      line-height: 1.3; }
+  aside#popup .wrap {
+    float: left; }
+    aside#popup .wrap label {
+      font: 12px/16px "맑은 고딕";
+      color: #b46927; }
+  aside#popup .close {
+    color: #b46927;
+    font-size: 12px;
+    line-height: 20px;
+    cursor: pointer;
+    float: right;
+    border: none;
+    background-color: transparent;
+    text-transform: uppercase; }
+
+@media screen and (max-width: 460px) {
+  aside#popup {
+    width: 90%;
+    padding: 20px; }
+    aside#popup .content h1 {
+      font-size: 26px;
+      margin-bottom: 20px; }
+    aside#popup .content p {
+      font-size: 12px; } }
 .department .inner .ceo::after {
   content: "";
   display: block;
@@ -905,7 +1002,7 @@ footer {
     padding: 0 30px;
     cursor: pointer;
     transition: 0.5s; }
-    @media (hover: hover) {
+    @media (hover: hover) and (pointer: fine) {
       .community .inner .news .box:hover {
         border: 1px solid #0d211a; }
         .community .inner .news .box:hover h2 {
@@ -1086,7 +1183,7 @@ footer {
           width: 100%;
           filter: grayscale(0.8);
           transition: 0.5s; }
-        @media (hover: hover) {
+        @media (hover: hover) and (pointer: fine) {
           .gallery .inner > section article .inner .pic:hover img {
             filter: grayscale(0); } }
       .gallery .inner > section article .inner h2 {
@@ -1104,7 +1201,8 @@ footer {
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.9);
-  padding: 5vw; }
+  padding: 5vw;
+  z-index: 12; }
   .gallery .pop img {
     width: 100%;
     height: 95%;
@@ -1168,7 +1266,7 @@ footer {
         object-fit: cover;
         transition: 0.5s;
         filter: grayscale(1); }
-      @media (hover: hover) {
+      @media (hover: hover) and (pointer: fine) {
         .youtube .inner .frame article .inner .pic:hover img {
           filter: none; } }
       .youtube .inner .frame article .inner .pic .icon-play {
@@ -1193,7 +1291,8 @@ footer {
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.9);
-  padding: 5vw; }
+  padding: 5vw;
+  z-index: 12; }
   .youtube .inner .pop figure {
     width: 100%;
     height: 100vh;
@@ -1335,7 +1434,7 @@ footer {
         font: 14px/40px "Questrial"; }
       .location .inner .map-wrap .map-inner .custom_typecontrol .btn {
         background: #fff; }
-        @media (hover: hover) {
+        @media (hover: hover) and (pointer: fine) {
           .location .inner .map-wrap .map-inner .custom_typecontrol .btn:hover {
             color: #fff;
             background: #b46927; } }
@@ -1564,7 +1663,8 @@ footer {
         padding-left: 10px;
         color: #b46927;
         font-family: "Questrial";
-        outline-color: #b46927; }
+        outline-color: #b46927;
+        background: #fff; }
       .join .inner form fieldset .member-info ul li.btns {
         margin: 50px auto 0;
         width: 70%; }
@@ -1577,7 +1677,7 @@ footer {
           color: #b46927; }
           .join .inner form fieldset .member-info ul li.btns input:nth-of-type(1) {
             margin-right: 10px; }
-          @media (hover: hover) {
+          @media (hover: hover) and (pointer: fine) {
             .join .inner form fieldset .member-info ul li.btns input:hover {
               background: #b46927;
               color: #fff; } }
