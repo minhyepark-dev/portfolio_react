@@ -171,6 +171,7 @@
                                 color: $pointColor;
                                 font-family: "Questrial";
                                 outline-color: $pointColor;
+                                background: #fff;
                             }
                             &.btns {
                                 margin: 50px auto 0;
@@ -185,7 +186,7 @@
                                     &:nth-of-type(1) {
                                         margin-right: 10px;
                                     }
-                                    @media (hover: hover) {
+                                    @media (hover: hover) and (pointer: fine) {
                                         &:hover {
                                             background: $pointColor;
                                             color: #fff;

@@ -81,6 +81,11 @@
 @media screen and (max-width: $tablet) {
     .visual {
         .inner {
+            h2 {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) !important;
+            }
             img {
                 width: 50%;
             }

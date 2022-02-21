@@ -72,9 +72,11 @@
                                     height: 1px;
                                     background: #fff;
                                 }
-                                &:hover {
-                                    &::after {
-                                        width: 100%;
+                                @media (hover: hover) and (pointer: fine) {
+                                    &:hover {
+                                        &::after {
+                                            width: 100%;
+                                        }
                                     }
                                 }
                             }

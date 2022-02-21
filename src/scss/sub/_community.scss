@@ -13,7 +13,7 @@
                 padding: 0 30px;
                 cursor: pointer;
                 transition: 0.5s;
-                @media (hover: hover) {
+                @media (hover: hover) and (pointer: fine) {
                     &:hover {
                         border: 1px solid $baseColor;
                         h2 {

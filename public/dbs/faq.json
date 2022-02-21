@@ -1,0 +1,29 @@
+{
+    "data": [
+        {
+            "title": "How to update your email address",
+            "write": "administrator",
+            "answer" : "Log in to Doremi.com and go to your Account settings page by clicking the more  icon and then Settings and privacy. Click Your account. Click Account information and enter your password. Click Email. Type your email address into the Email field.  Note: An email address can only be associated with one Doremi account at a time. Click the Save button at the bottom of the page."
+        },
+        {
+            "title": "Help with locked or limited account",
+            "write": "administrator",
+            "answer" : "If you are logged in to your account and see a message that your account has been locked for security purposes, this means that we have detected suspicious behavior and it appears as though your account may have been compromised. To unlock your account, please secure it by changing your password now. If you have an email address associated with your account, we also sent instructions to that address. If you don’t see an email from us, please check your spam, junk and, social folders."
+        },
+        {
+            "title": "How to protect your personal information",
+            "write": "administrator",
+            "answer" : "You are in control of how much information you share on Doremi or any other website. Don’t post information you consider to be private, and be thoughtful about when you want to publicly share your location."
+        },
+        {
+            "title": "Notices on Doremi and what they mean",
+            "write": "administrator",
+            "answer" : "We may sometimes add a notice to an account or Tweet to give you more context on the actions our systems or teams may take. In some instances, this is because the behavior violates the Doremi Rules. Other times, it may be in response to a valid and properly scoped request from an authorized entity in a given country. Below is a range of the notices you may come across when viewing an account or Tweet. "
+        },
+        {
+            "title": "About Doremi.com supported browsers",
+            "write": "administrator",
+            "answer" : "If you use Doremi on an older version of the above browsers, browsers not listed, or a browser extension which modifies your user agent, you may be unable to use Doremi. In order to ensure the best possible Doremi experience, including all the latest features and security updates, please make sure your browser and operating system are up-to-date."
+        }
+    ]
+}

@@ -125,7 +125,7 @@
                     }
                     .btn {
                         background: #fff;
-                        @media (hover: hover) {
+                        @media (hover: hover) and (pointer: fine) {
                             &:hover {
                                 color: #fff;
                                 background: $pointColor;
