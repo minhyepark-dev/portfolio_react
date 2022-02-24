@@ -14,7 +14,6 @@ function Collection() {
     const fetchGallery = async () => {
         await axios.get(url).then((json) => {
             const photo = json.data.photos.photo;
-            console.log(photo);
             setItems(photo);
         });
     };
