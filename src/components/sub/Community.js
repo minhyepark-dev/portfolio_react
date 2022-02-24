@@ -22,15 +22,21 @@ function Community() {
         const boxes = boxTab.current.querySelectorAll("section > div");
         btns.forEach((el, index) => {
             el.addEventListener("click", (e) => {
-                let isOn = e.currentTarget.classList.contains("on");
-                if (isOn) return;
-                if (enable) {
-                    activation(btns, index);
-                    activation(boxes, index);
-                    setEnable(false);
-                }
+                moveOn(e, index);
+            });
+            el.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") moveOn(e, index);
             });
         });
+        const moveOn = (e, index) => {
+            let isOn = e.currentTarget.classList.contains("on");
+            if (isOn) return;
+            if (enable) {
+                activation(btns, index);
+                activation(boxes, index);
+                setEnable(false);
+            }
+        };
     };
 
     const activation = (arr, index) => {
@@ -42,7 +48,7 @@ function Community() {
         handleTab();
     }, []);
     return (
-        <main className="community">
+        <main id="main" className="community">
             <div className="sub-visual">
                 <div className="inner">
                     <h1>Community</h1>
@@ -50,29 +56,33 @@ function Community() {
             </div>
             <div className="inner">
                 <div className="news" ref={btnTab}>
-                    <div className="box on" onClick={handleTab}>
+                    <div tabIndex={0} className="box on" onClick={handleTab} onKeyDown={handleTab}>
                         <h2>Q&A</h2>
                     </div>
                     <div
+                        tabIndex={0}
                         className="box"
-                        onClick={async () => {
+                        onClick={() => {
                             handleTab();
-                            await axios.get(`${base}/dbs/faq.json`).then((json) => {
-                                const response = json.data.data;
-                                setFaq(response);
-                            });
+                            btnFaq();
+                        }}
+                        onKeyDown={() => {
+                            btnFaq();
+                            handleTab();
                         }}
                     >
                         <h2>FAQ</h2>
                     </div>
                     <div
+                        tabIndex={0}
                         className="box"
-                        onClick={async () => {
+                        onClick={() => {
                             handleTab();
-                            await axios.get(`${base}/dbs/board.json`).then((json) => {
-                                const response = json.data.data;
-                                setBoard(response);
-                            });
+                            btnBoard();
+                        }}
+                        onKeyDown={() => {
+                            btnBoard();
+                            handleTab();
                         }}
                     >
                         <h2>Board</h2>
@@ -181,6 +191,18 @@ function Community() {
             </div>
         </main>
     );
+    async function btnFaq() {
+        await axios.get(`${base}/dbs/faq.json`).then((json) => {
+            const response = json.data.data;
+            setFaq(response);
+        });
+    }
+    async function btnBoard() {
+        await axios.get(`${base}/dbs/board.json`).then((json) => {
+            const response = json.data.data;
+            setBoard(response);
+        });
+    }
 }
 
 export default Community;

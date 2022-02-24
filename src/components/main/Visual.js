@@ -21,7 +21,7 @@ function Visual() {
     }, [mouseMove]);
 
     return (
-        <main className="visual" ref={main}>
+        <main id="main" className="visual" ref={main}>
             <div className="inner">
                 <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam, veritatis ea corrupti voluptatibus ad ut vitae suscipit

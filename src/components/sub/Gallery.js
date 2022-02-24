@@ -29,7 +29,7 @@ function Gallery() {
     }, []);
 
     return (
-        <main className="gallery">
+        <main id="main" className="gallery">
             <div className="sub-visual">
                 <div className="inner">
                     <h1>Gallery</h1>
@@ -83,10 +83,17 @@ function Gallery() {
                                     <article key={index} className="item">
                                         <div className="inner">
                                             <div
+                                                tabIndex={0}
                                                 className="pic"
                                                 onClick={() => {
                                                     setIndex(index);
                                                     setIsPop(true);
+                                                }}
+                                                onKeyDown={(e) => {
+                                                    if (e.key === "Enter") {
+                                                        setIndex(index);
+                                                        setIsPop(true);
+                                                    }
                                                 }}
                                             >
                                                 <img src={imgSrc} />
@@ -150,8 +157,12 @@ function Gallery() {
                 <p>{items[index].title}</p>
                 <img src={imgSrc} />
                 <span
+                    tabIndex={0}
                     onClick={() => {
                         setIsPop(false);
+                    }}
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter") setIsPop(false);
                     }}
                 >
                     Close

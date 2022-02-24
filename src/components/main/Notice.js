@@ -35,33 +35,25 @@ function Notice() {
                 <div className="slider-wrap">
                     <div className="slider-btn">
                         <div
+                            tabIndex={0}
                             className="prev"
                             onClick={() => {
-                                new Anime(box.current, {
-                                    prop: "margin-left",
-                                    value: "0%",
-                                    duration: 500,
-                                    callback: () => {
-                                        box.current.prepend(box.current.lastElementChild);
-                                        box.current.style.marginLeft = "-100%";
-                                    },
-                                });
+                                btnPrev();
+                            }}
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter") btnPrev();
                             }}
                         >
                             <FontAwesomeIcon className="icon-arrow" icon={faChevronLeft} />
                         </div>
                         <div
+                            tabIndex={0}
                             className="next"
                             onClick={() => {
-                                new Anime(box.current, {
-                                    prop: "margin-left",
-                                    value: "-200%",
-                                    duration: 500,
-                                    callback: () => {
-                                        box.current.append(box.current.firstElementChild);
-                                        box.current.style.marginLeft = "-100%";
-                                    },
-                                });
+                                btnNext();
+                            }}
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter") btnNext();
                             }}
                         >
                             <FontAwesomeIcon className="icon-arrow" icon={faChevronRight} />
@@ -95,6 +87,28 @@ function Notice() {
             </div>
         </main>
     );
+    function btnPrev() {
+        new Anime(box.current, {
+            prop: "margin-left",
+            value: "0%",
+            duration: 500,
+            callback: () => {
+                box.current.prepend(box.current.lastElementChild);
+                box.current.style.marginLeft = "-100%";
+            },
+        });
+    }
+    function btnNext() {
+        new Anime(box.current, {
+            prop: "margin-left",
+            value: "-200%",
+            duration: 500,
+            callback: () => {
+                box.current.append(box.current.firstElementChild);
+                box.current.style.marginLeft = "-100%";
+            },
+        });
+    }
 }
 
 export default Notice;

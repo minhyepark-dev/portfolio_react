@@ -75,7 +75,7 @@ function Location() {
         };
     }, [index]);
     return (
-        <main className="location">
+        <main id="main" className="location">
             <div className="sub-visual">
                 <div className="inner">
                     <h1>Location</h1>
@@ -122,8 +122,12 @@ function Location() {
                 <div className="map-wrap">
                     <ul className="branch" ref={btnBranch}>
                         <li
+                            tabIndex={0}
                             onClick={() => {
                                 setIndex(0);
+                            }}
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter") setIndex(0);
                             }}
                         >
                             <FontAwesomeIcon className="icon" icon={faMapMarkerAlt} />
@@ -136,8 +140,12 @@ function Location() {
                             </div>
                         </li>
                         <li
+                            tabIndex={0}
                             onClick={() => {
                                 setIndex(1);
+                            }}
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter") setIndex(1);
                             }}
                         >
                             <FontAwesomeIcon className="icon" icon={faMapMarkerAlt} />
@@ -150,8 +158,12 @@ function Location() {
                             </div>
                         </li>
                         <li
+                            tabIndex={0}
                             onClick={() => {
                                 setIndex(2);
+                            }}
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter") setIndex(2);
                             }}
                         >
                             <FontAwesomeIcon className="icon" icon={faMapMarkerAlt} />
@@ -167,19 +179,27 @@ function Location() {
                     <div className="map-inner">
                         <div className="custom_typecontrol radius_border">
                             <span
+                                tabIndex={0}
                                 id="btnRoadmap"
                                 className="selected_btn"
                                 onClick={() => {
                                     setMapType("roadmap");
                                 }}
+                                onKeyDown={(e) => {
+                                    if (e.key === "Enter") setMapType("roadmap");
+                                }}
                             >
                                 Map
                             </span>
                             <span
+                                tabIndex={0}
                                 id="btnSkyview"
                                 className="btn"
                                 onClick={() => {
                                     setMapType("skyview");
+                                }}
+                                onKeyDown={(e) => {
+                                    if (e.key === "Enter") setMapType("skyview");
                                 }}
                             >
                                 Sky View
@@ -188,9 +208,18 @@ function Location() {
                         <ul className="traffic">
                             {toggle ? (
                                 <li
+                                    tabIndex={0}
                                     onClick={() => {
                                         map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
                                         setToggle(!toggle);
+                                    }}
+                                    onKeyDown={(e) => {
+                                        {
+                                            if (e.key === "Enter") {
+                                                map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+                                                setToggle(!toggle);
+                                            }
+                                        }
                                     }}
                                 >
                                     <FontAwesomeIcon className="traffic-icon" icon={faTrafficLight} />
@@ -198,9 +227,18 @@ function Location() {
                                 </li>
                             ) : (
                                 <li
+                                    tabIndex={0}
                                     onClick={() => {
                                         map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
                                         setToggle(!toggle);
+                                    }}
+                                    onKeyDown={(e) => {
+                                        {
+                                            if (e.key === "Enter") {
+                                                map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+                                                setToggle(!toggle);
+                                            }
+                                        }
                                     }}
                                 >
                                     <FontAwesomeIcon className="traffic-icon" icon={faTrafficLight} />

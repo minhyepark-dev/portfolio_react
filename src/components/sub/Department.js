@@ -11,7 +11,7 @@ function Department() {
         });
     }, []);
     return (
-        <main className="department">
+        <main id="main" className="department">
             <div className="sub-visual">
                 <div className="inner">
                     <h1>Department</h1>

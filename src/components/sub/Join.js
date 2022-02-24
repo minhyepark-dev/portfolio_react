@@ -105,7 +105,7 @@ function Join() {
         }
     }, [err]);
     return (
-        <main className="join">
+        <main id="main" className="join">
             <div className="sub-visual">
                 <div className="inner">
                     <h1>Join</h1>

@@ -17,7 +17,7 @@ function Youtube() {
         });
     }, []);
     return (
-        <main className="youtube">
+        <main id="main" className="youtube">
             <div className="sub-visual">
                 <div className="inner">
                     <h1>Youtube</h1>
@@ -34,10 +34,17 @@ function Youtube() {
                             <article key={index}>
                                 <div className="inner">
                                     <div
+                                        tabIndex={0}
                                         className="pic"
                                         onClick={() => {
                                             setIsPop(true);
                                             setIndex(index);
+                                        }}
+                                        onKeyDown={(e) => {
+                                            if (e.key === "Enter") {
+                                                setIsPop(true);
+                                                setIndex(index);
+                                            }
                                         }}
                                     >
                                         <img src={item.snippet.thumbnails.medium.url} alt="" />
@@ -68,8 +75,12 @@ function Youtube() {
                         ></iframe>
                     </figure>
                     <span
+                        tabIndex={0}
                         onClick={() => {
                             setIsPop(false);
+                        }}
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter") setIsPop(false);
                         }}
                     >
                         Close
