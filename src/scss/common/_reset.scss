@@ -1,3 +1,10 @@
+$laptop: 1196px;
+$tablet: 769px;
+$mobile: 460px;
+$mobileSmall: 360px;
+$baseColor: #0d211a;
+$pointColor: #b46927;
+
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +37,19 @@ fieldset {
     border: none;
 }
 input[type="checkbox"] {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    margin-top: 4px;
+    outline: none;
+    border: 1px solid transparent;
+    background-color: transparent;
+    &:focus {
+        & + label {
+            border: 1px solid $baseColor;
+        }
+    }
     & + label {
         display: inline-block;
         padding-left: 25px;
@@ -44,7 +63,19 @@ input[type="checkbox"] {
     }
 }
 input[type="radio"] {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    margin-top: 4px;
+    outline: none;
+    border: 1px solid transparent;
+    background-color: transparent;
+    &:focus {
+        & + label {
+            border: 1px solid $baseColor;
+        }
+    }
     & + label {
         display: inline-block;
         padding-left: 25px;
@@ -57,10 +88,3 @@ input[type="radio"] {
         background-image: url(/public/img/box_radio_checked.png);
     }
 }
-
-$laptop: 1196px;
-$tablet: 769px;
-$mobile: 460px;
-$mobileSmall: 360px;
-$baseColor: #0d211a;
-$pointColor: #b46927;

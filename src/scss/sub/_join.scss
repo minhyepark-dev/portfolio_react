@@ -139,7 +139,10 @@
                             select {
                                 border: 1px solid $pointColor;
                             }
-                            input {
+                            input[type="text"],
+                            input[type="password"],
+                            input[type="reset"],
+                            input[type="submit"] {
                                 border: none;
                                 border-bottom: 1px solid $pointColor;
                                 padding-top: 10px;
