@@ -12,22 +12,26 @@ const kakaoMapKey = process.env.REACT_APP_KAKAO_MAP_API_KEY;
 
 function loadKakaoMap() {
   return new Promise((resolve) => {
+    if (window.kakao && window.kakao.maps) {
+      resolve(); // 이미 스크립트가 로드된 경우 재로드 방지
+      return;
+    }
     const script = document.createElement('script');
     script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoMapKey}`;
     script.async = true;
-    document.head.appendChild(script);
     script.onload = () => resolve();
+    document.head.appendChild(script);
   });
 }
 
-async function Location() {
-  await loadKakaoMap();
-  const { kakao } = window;
+function Location() {
   const container = useRef(null);
   const btnBranch = useRef(null);
   const [map, setMap] = useState(null);
   const [index, setIndex] = useState(0);
   const [toggle, setToggle] = useState(false);
+  const [mapLoaded, setMapLoaded] = useState(false);
+
   const info = [
     {
       title: '본점',
@@ -65,7 +69,17 @@ async function Location() {
       roadmapControl.className = 'btn';
     }
   }
+
   useEffect(() => {
+    async function initializeMap() {
+      await loadKakaoMap();
+      setMapLoaded(true);
+    }
+    initializeMap();
+  }, []);
+
+  useEffect(() => {
+    if (!mapLoaded || !container.current) return;
     const options = {
       center: mapInfo[index].latlng,
       level: 3,
@@ -96,7 +110,7 @@ async function Location() {
       window.removeEventListener('resize', mapSet);
       container.current.innerHTML = '';
     };
-  }, [index]);
+  }, [index, mapLoaded]);
   return (
     <main id="main" className="location">
       <div className="sub-visual">
