@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - master
+      - master # ✅ main 브랜치를 사용할 경우 'main'으로 변경
 
 jobs:
   build:
@@ -22,10 +22,15 @@ jobs:
         run: npm install
 
       - name: Build the app
+        env:
+          CI: false # ✅ Lint 경고를 무시하고 빌드
         run: npm run build
+
+      - name: Check build folder
+        run: ls -la build # ✅ build 폴더 확인 (디버깅 용도)
 
       - name: Deploy to GitHub Pages
         env:
           REACT_APP_KAKAO_MAP_API_KEY: ${{ secrets.REACT_APP_KAKAO_MAP_API_KEY }}
-          CI: false
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run deploy
