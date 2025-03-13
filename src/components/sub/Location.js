@@ -24,13 +24,12 @@ function loadKakaoMap() {
 }
 
 function Location() {
-  const container = useRef(null);
-  const btnBranch = useRef(null);
-  const [map, setMap] = useState(null);
-  const [index, setIndex] = useState(0);
-  const [toggle, setToggle] = useState(false);
-  const [mapLoaded, setMapLoaded] = useState(false);
-  const [mapInfo, setMapInfo] = useState([]);
+  const container = useRef(null); // 지도 컨테이너
+  const btnBranch = useRef(null); // 버튼들
+  const [map, setMap] = useState(null); // 지도 상태
+  const [index, setIndex] = useState(0); // 현재 선택된 지점 인덱스
+  const [mapLoaded, setMapLoaded] = useState(false); // 지도 로드 상태
+  const [mapInfo, setMapInfo] = useState([]); // 지도에 표시할 지점 정보
 
   useEffect(() => {
     async function initializeMap() {
@@ -80,18 +79,22 @@ function Location() {
     }
 
     initializeMap();
-  }, []);
+  }, []); // 한 번만 실행되도록 빈 배열 전달
 
   useEffect(() => {
     if (!mapLoaded || !container.current || mapInfo.length === 0) return;
 
+    // 지도 옵션 설정
     const options = {
-      center: mapInfo[index].latlng,
-      level: 3,
+      center: mapInfo[index].latlng, // 선택된 지점의 좌표로 초기화
+      level: 3, // 지도 확대 레벨
     };
+
+    // 지도 인스턴스 생성
     const newMap = new window.kakao.maps.Map(container.current, options);
     setMap(newMap);
 
+    // 마커 생성
     new window.kakao.maps.Marker({
       map: newMap,
       position: mapInfo[index].latlng,
@@ -103,20 +106,24 @@ function Location() {
       ),
     });
 
+    // 지도 설정
     newMap.setCenter(mapInfo[index].latlng);
     newMap.setZoomable(true);
     newMap.setDraggable(true);
 
+    // 버튼 활성화 상태 변경
     for (const btn of btnBranch.current.children) btn.classList.remove('on');
     btnBranch.current.children[index].classList.add('on');
 
+    // 윈도우 크기 변경 시 지도 중앙 재설정
     const mapSet = () => newMap.setCenter(mapInfo[index].latlng);
     window.addEventListener('resize', mapSet);
+
     return () => {
       window.removeEventListener('resize', mapSet);
-      container.current.innerHTML = '';
+      container.current.innerHTML = ''; // 컴포넌트 언마운트 시 맵 리셋
     };
-  }, [index, mapLoaded, mapInfo]);
+  }, [index, mapLoaded, mapInfo]); // `index`와 `mapInfo` 변경 시 실행
 
   return (
     <main id="main" className="location">
