@@ -36,41 +36,44 @@ function Location() {
     async function initializeMap() {
       try {
         await loadKakaoMap(); // KakaoMap 로드 대기
-        setMapLoaded(true);
-
-        // 지도 정보 설정
-        setMapInfo([
-          {
-            title: '본점',
-            latlng: new window.kakao.maps.LatLng(
-              37.51276949548283,
-              127.05883923964538
-            ),
-            imgSrc: process.env.PUBLIC_URL + '/img/pin.png',
-            imgSize: new window.kakao.maps.Size(50, 50),
-            imgPos: { offset: new window.kakao.maps.Point(25, 50) },
-          },
-          {
-            title: '지점1',
-            latlng: new window.kakao.maps.LatLng(
-              37.57975318699628,
-              126.97709192859216
-            ),
-            imgSrc: process.env.PUBLIC_URL + '/img/pin2.png',
-            imgSize: new window.kakao.maps.Size(50, 50),
-            imgPos: { offset: new window.kakao.maps.Point(25, 55) },
-          },
-          {
-            title: '지점2',
-            latlng: new window.kakao.maps.LatLng(
-              35.15317690680852,
-              129.11898444686017
-            ),
-            imgSrc: process.env.PUBLIC_URL + '/img/pin3.png',
-            imgSize: new window.kakao.maps.Size(50, 50),
-            imgPos: { offset: new window.kakao.maps.Point(25, 50) },
-          },
-        ]);
+        if (window.kakao && window.kakao.maps) {
+          // 지도 정보 설정
+          setMapInfo([
+            {
+              title: '본점',
+              latlng: new window.kakao.maps.LatLng(
+                37.51276949548283,
+                127.05883923964538
+              ),
+              imgSrc: process.env.PUBLIC_URL + '/img/pin.png',
+              imgSize: new window.kakao.maps.Size(50, 50),
+              imgPos: { offset: new window.kakao.maps.Point(25, 50) },
+            },
+            {
+              title: '지점1',
+              latlng: new window.kakao.maps.LatLng(
+                37.57975318699628,
+                126.97709192859216
+              ),
+              imgSrc: process.env.PUBLIC_URL + '/img/pin2.png',
+              imgSize: new window.kakao.maps.Size(50, 50),
+              imgPos: { offset: new window.kakao.maps.Point(25, 55) },
+            },
+            {
+              title: '지점2',
+              latlng: new window.kakao.maps.LatLng(
+                35.15317690680852,
+                129.11898444686017
+              ),
+              imgSrc: process.env.PUBLIC_URL + '/img/pin3.png',
+              imgSize: new window.kakao.maps.Size(50, 50),
+              imgPos: { offset: new window.kakao.maps.Point(25, 50) },
+            },
+          ]);
+          setMapLoaded(true); // 로드 완료 후 mapLoaded true로 설정
+        } else {
+          throw new Error('Kakao Maps API is not loaded properly.');
+        }
       } catch (error) {
         console.error('Failed to load Kakao Maps API:', error);
       }
